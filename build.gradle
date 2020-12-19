@@ -82,6 +82,18 @@ allprojects {
 spotless {
     kotlin {
         target "**/*.kt"
-        ktlint(ktlintVersion).userData(['max_line_length' : '100'])
+        ktlint(ktlintVersion).userData(['max_line_length': '100'])
+    }
+}
+
+tasks.withType(Test).configureEach {
+    int availableProcessors = Runtime.runtime.availableProcessors();
+    maxParallelForks = availableProcessors.intdiv(2) ?: 1
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options {
+        fork = true
+        incremental = true
     }
 }

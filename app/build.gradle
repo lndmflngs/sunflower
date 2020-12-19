@@ -42,6 +42,7 @@ android {
             annotationProcessorOptions {
                 arguments += [
                         "room.incremental"                            : "true",
+                        "dagger.gradle.incremental"                   : "true",
                         "dagger.hilt.disableModulesHaveInstallInCheck": "true"
                 ]
             }
