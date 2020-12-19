@@ -31,19 +31,19 @@ import javax.inject.Singleton
 @Module
 class DatabaseModule {
 
-	@Singleton
-	@Provides
-	fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
-		return AppDatabase.getInstance(context)
-	}
+    @Singleton
+    @Provides
+    fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
+        return AppDatabase.getInstance(context)
+    }
 
-	@Provides
-	fun providePlantDao(appDatabase: AppDatabase): PlantDao {
-		return appDatabase.plantDao()
-	}
+    @Provides
+    fun providePlantDao(appDatabase: AppDatabase): PlantDao {
+        return appDatabase.plantDao()
+    }
 
-	@Provides
-	fun provideGardenPlantingDao(appDatabase: AppDatabase): GardenPlantingDao {
-		return appDatabase.gardenPlantingDao()
-	}
+    @Provides
+    fun provideGardenPlantingDao(appDatabase: AppDatabase): GardenPlantingDao {
+        return appDatabase.gardenPlantingDao()
+    }
 }

@@ -40,15 +40,48 @@ android {
         buildConfigField("String", "UNSPLASH_ACCESS_KEY", "\"" + getUnsplashAccess() + "\"")
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments["dagger.hilt.disableModulesHaveInstallInCheck"] = "true"
+                arguments += [
+                        "room.incremental"                            : "true",
+                        "dagger.hilt.disableModulesHaveInstallInCheck": "true"
+                ]
             }
         }
     }
 
     buildTypes {
+        debug {
+            minifyEnabled true
+            shrinkResources true
+            crunchPngs false
+            ext.alwaysUpdateBuildId = false
+            signingConfig signingConfigs.debug
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            pseudoLocalesEnabled false
+            zipAlignEnabled true
+            signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "stage"
+
+    productFlavors {
+        dev {
+            dimension "stage"
+            versionNameSuffix "-dev"
+            applicationIdSuffix '.dev'
+            resConfigs "en", "xxhdpi"
+            getIsDefault().set(true)
+        }
+
+        prod {
+            dimension "stage"
         }
     }
 
