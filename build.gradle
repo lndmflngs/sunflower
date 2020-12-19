@@ -24,7 +24,7 @@ buildscript {
 
         // App dependencies
         appCompatVersion = '1.2.0'
-        assistedInjectVersion = '0.6.0'
+        assistedInjectVersion = '0.5.2'
         constraintLayoutVersion = '2.1.0-alpha2'
         coreTestingVersion = '2.1.0'
         coroutinesVersion = "1.4.2"
