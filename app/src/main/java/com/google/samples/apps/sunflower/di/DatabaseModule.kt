@@ -20,29 +20,17 @@ import android.content.Context
 import com.google.samples.apps.sunflower.data.AppDatabase
 import com.google.samples.apps.sunflower.data.GardenPlantingDao
 import com.google.samples.apps.sunflower.data.PlantDao
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
-import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Singleton
 
-@InstallIn(ApplicationComponent::class)
-@Module
 class DatabaseModule {
 
-    @Singleton
-    @Provides
-    fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
+    fun provideAppDatabase(context: Context): AppDatabase {
         return AppDatabase.getInstance(context)
     }
 
-    @Provides
     fun providePlantDao(appDatabase: AppDatabase): PlantDao {
         return appDatabase.plantDao()
     }
 
-    @Provides
     fun provideGardenPlantingDao(appDatabase: AppDatabase): GardenPlantingDao {
         return appDatabase.gardenPlantingDao()
     }

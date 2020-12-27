@@ -28,9 +28,7 @@ import androidx.fragment.app.viewModels
 import com.google.samples.apps.sunflower.adapters.PlantAdapter
 import com.google.samples.apps.sunflower.databinding.FragmentPlantListBinding
 import com.google.samples.apps.sunflower.viewmodels.PlantListViewModel
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class PlantListFragment : Fragment() {
 
     private val viewModel: PlantListViewModel by viewModels()

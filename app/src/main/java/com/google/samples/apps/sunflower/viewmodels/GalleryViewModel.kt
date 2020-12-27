@@ -16,7 +16,6 @@
 
 package com.google.samples.apps.sunflower.viewmodels
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
@@ -25,7 +24,7 @@ import com.google.samples.apps.sunflower.data.UnsplashPhoto
 import com.google.samples.apps.sunflower.data.UnsplashRepository
 import kotlinx.coroutines.flow.Flow
 
-class GalleryViewModel @ViewModelInject constructor(
+class GalleryViewModel(
     private val repository: UnsplashRepository
 ) : ViewModel() {
     private var currentQueryValue: String? = null

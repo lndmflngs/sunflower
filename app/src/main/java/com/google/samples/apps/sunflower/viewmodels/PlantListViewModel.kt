@@ -16,13 +16,7 @@
 
 package com.google.samples.apps.sunflower.viewmodels
 
-import androidx.hilt.Assisted
-import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.google.samples.apps.sunflower.PlantListFragment
 import com.google.samples.apps.sunflower.data.Plant
 import com.google.samples.apps.sunflower.data.PlantRepository
@@ -34,9 +28,9 @@ import kotlinx.coroutines.launch
 /**
  * The ViewModel for [PlantListFragment].
  */
-class PlantListViewModel @ViewModelInject internal constructor(
+class PlantListViewModel internal constructor(
     plantRepository: PlantRepository,
-    @Assisted private val savedStateHandle: SavedStateHandle
+    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     private val growZone: MutableStateFlow<Int> = MutableStateFlow(

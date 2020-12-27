@@ -16,11 +16,7 @@
 
 package com.google.samples.apps.sunflower.data
 
-import javax.inject.Inject
-import javax.inject.Singleton
-
-@Singleton
-class GardenPlantingRepository @Inject constructor(
+class GardenPlantingRepository(
     private val gardenPlantingDao: GardenPlantingDao
 ) {
 

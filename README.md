@@ -81,7 +81,6 @@ Libraries Used
   * [Layout][35] - Lay out widgets using different algorithms.
 * Third party and miscellaneous libraries
   * [Glide][90] for image loading
-  * [Hilt][92]: for [dependency injection][93]
   * [Kotlin Coroutines][91] for managing background threads with simplified code and reducing needs for callbacks
 
 [0]: https://developer.android.com/jetpack/components
@@ -102,7 +101,6 @@ Libraries Used
 [35]: https://developer.android.com/guide/topics/ui/declaring-layout
 [90]: https://bumptech.github.io/glide/
 [91]: https://kotlinlang.org/docs/reference/coroutines-overview.html
-[92]: https://developer.android.com/training/dependency-injection/hilt-android
 [93]: https://developer.android.com/training/dependency-injection
 
 Upcoming features

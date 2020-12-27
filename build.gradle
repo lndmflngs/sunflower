@@ -33,8 +33,6 @@ buildscript {
         glideVersion = '4.11.0'
         gradleVersion = '7.0.0-alpha03'
         gsonVersion = '2.8.6'
-        hiltVersion = '2.30.1-alpha'
-        hiltViewModelVersion = '1.0.0-alpha02'
         junitVersion = '4.13.1'
         kotlinVersion = '1.4.21'
         ktlintVersion = '0.38.1'
@@ -64,7 +62,6 @@ buildscript {
         classpath "com.android.tools.build:gradle:$gradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
-        classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
     }
 }
 
