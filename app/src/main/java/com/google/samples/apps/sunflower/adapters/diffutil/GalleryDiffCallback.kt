@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,18 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data
+package com.google.samples.apps.sunflower.adapters.diffutil
 
-import androidx.room.Embedded
-import androidx.room.Relation
+import androidx.recyclerview.widget.DiffUtil
+import com.google.samples.apps.sunflower.data.remote.model.UnsplashPhoto
 
-/**
- * This class captures the relationship between a [Plant] and a user's [GardenPlanting], which is
- * used by Room to fetch the related entities.
- */
-data class PlantAndGardenPlantings(
-	@Embedded
-	val plant: Plant,
+internal class GalleryDiffCallback : DiffUtil.ItemCallback<UnsplashPhoto>() {
 
-	@Relation(parentColumn = "id", entityColumn = "plant_id")
-	val gardenPlantings: List<GardenPlanting> = emptyList(),
-)
+	override fun areItemsTheSame(oldItem: UnsplashPhoto, newItem: UnsplashPhoto): Boolean {
+		return oldItem.id == newItem.id
+	}
+
+	override fun areContentsTheSame(oldItem: UnsplashPhoto, newItem: UnsplashPhoto): Boolean {
+		return oldItem == newItem
+	}
+}

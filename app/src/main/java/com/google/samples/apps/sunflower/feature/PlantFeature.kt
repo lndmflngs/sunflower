@@ -16,10 +16,10 @@
 
 package com.google.samples.apps.sunflower.feature
 
-import com.google.samples.apps.sunflower.data.GardenPlantingDao
-import com.google.samples.apps.sunflower.data.GardenPlantingRepository
-import com.google.samples.apps.sunflower.data.PlantDao
-import com.google.samples.apps.sunflower.data.PlantRepository
+import com.google.samples.apps.sunflower.data.databse.dao.GardenPlantingDao
+import com.google.samples.apps.sunflower.data.databse.dao.PlantDao
+import com.google.samples.apps.sunflower.data.databse.repository.GardenPlantingRepository
+import com.google.samples.apps.sunflower.data.databse.repository.PlantRepository
 
 class PlantFeature(
 	private val plantDao: PlantDao,
@@ -29,5 +29,4 @@ class PlantFeature(
 	val plantRepository by lazy { PlantRepository(plantDao) }
 
 	val gardenPlantingRepository by lazy { GardenPlantingRepository(gardenPlantingDao) }
-
 }

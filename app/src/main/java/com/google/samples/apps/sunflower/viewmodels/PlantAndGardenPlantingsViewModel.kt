@@ -16,7 +16,7 @@
 
 package com.google.samples.apps.sunflower.viewmodels
 
-import com.google.samples.apps.sunflower.data.PlantAndGardenPlantings
+import com.google.samples.apps.sunflower.data.databse.PlantAndGardenPlantings
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -36,8 +36,8 @@ class PlantAndGardenPlantingsViewModel(plantings: PlantAndGardenPlantings) {
 	val plantId
 		get() = plant.plantId
 
-	companion object {
+	private companion object {
 
-		private val dateFormat = SimpleDateFormat("MMM d, yyyy", Locale.US)
+		val dateFormat = SimpleDateFormat("MMM d, yyyy", Locale.US)
 	}
 }

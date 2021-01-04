@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.adapters
+package com.google.samples.apps.sunflower.adapters.binding
 
 import android.text.method.LinkMovementMethod
 import android.widget.ImageView
@@ -38,32 +38,32 @@ fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
 }
 
 @BindingAdapter("isFabGone")
-fun bindIsFabGone(view: FloatingActionButton, isGone: Boolean?) {
+fun bindIsFabGone(view: FloatingActionButton, isGone: Boolean?) = with(view) {
 	if (isGone == null || isGone) {
-		view.hide()
+		hide()
 	} else {
-		view.show()
+		show()
 	}
 }
 
 @BindingAdapter("renderHtml")
-fun bindRenderHtml(view: TextView, description: String?) {
+fun bindRenderHtml(view: TextView, description: String?) = with(view) {
 	if (description != null) {
-		view.text = HtmlCompat.fromHtml(description, FROM_HTML_MODE_COMPACT)
-		view.movementMethod = LinkMovementMethod.getInstance()
+		text = HtmlCompat.fromHtml(description, FROM_HTML_MODE_COMPACT)
+		movementMethod = LinkMovementMethod.getInstance()
 	} else {
-		view.text = ""
+		text = ""
 	}
 }
 
 @BindingAdapter("wateringText")
-fun bindWateringText(textView: TextView, wateringInterval: Int) {
-	val resources = textView.context.resources
+fun bindWateringText(textView: TextView, wateringInterval: Int) = with(textView) {
+	val resources = context.resources
 	val quantityString = resources.getQuantityString(
 		R.plurals.watering_needs_suffix,
 		wateringInterval,
 		wateringInterval
 	)
 
-	textView.text = quantityString
+	text = quantityString
 }

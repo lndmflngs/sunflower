@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data
+package com.google.samples.apps.sunflower.data.remote.repository
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.google.samples.apps.sunflower.api.UnsplashService
+import com.google.samples.apps.sunflower.data.databse.paging.UnsplashPagingSource
+import com.google.samples.apps.sunflower.data.remote.model.UnsplashPhoto
 import kotlinx.coroutines.flow.Flow
 
 class UnsplashRepository(private val service: UnsplashService) {
@@ -31,8 +33,8 @@ class UnsplashRepository(private val service: UnsplashService) {
 		).flow
 	}
 
-	companion object {
+	private companion object {
 
-		private const val NETWORK_PAGE_SIZE = 25
+		const val NETWORK_PAGE_SIZE = 25
 	}
 }

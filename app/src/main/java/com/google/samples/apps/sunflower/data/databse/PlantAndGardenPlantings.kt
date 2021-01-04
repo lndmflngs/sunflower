@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data
+package com.google.samples.apps.sunflower.data.databse
 
-import androidx.room.TypeConverter
-import java.util.*
+import androidx.room.Embedded
+import androidx.room.Relation
+import com.google.samples.apps.sunflower.data.databse.entity.GardenPlanting
+import com.google.samples.apps.sunflower.data.databse.entity.Plant
 
 /**
- * Type converters to allow Room to reference complex data types.
+ * This class captures the relationship between a [Plant] and a user's [GardenPlanting], which is
+ * used by Room to fetch the related entities.
  */
-class Converters {
+data class PlantAndGardenPlantings(
+	@Embedded
+	val plant: Plant,
 
-	@TypeConverter
-	fun calendarToDatestamp(calendar: Calendar): Long = calendar.timeInMillis
-
-	@TypeConverter
-	fun datestampToCalendar(value: Long): Calendar =
-		Calendar.getInstance().apply { timeInMillis = value }
-}
+	@Relation(parentColumn = "id", entityColumn = "plant_id")
+	val gardenPlantings: List<GardenPlanting> = emptyList(),
+)

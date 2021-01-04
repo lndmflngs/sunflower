@@ -21,9 +21,9 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.google.samples.apps.sunflower.data.databse.entity.Plant
+import com.google.samples.apps.sunflower.data.databse.repository.PlantRepository
 import com.google.samples.apps.sunflower.fragment.PlantListFragment
-import com.google.samples.apps.sunflower.data.Plant
-import com.google.samples.apps.sunflower.data.PlantRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flatMapLatest
@@ -95,9 +95,9 @@ class PlantListViewModel(
 
 	fun isFiltered() = growZone.value != NO_GROW_ZONE
 
-	companion object {
+	private companion object {
 
-		private const val NO_GROW_ZONE = - 1
-		private const val GROW_ZONE_SAVED_STATE_KEY = "GROW_ZONE_SAVED_STATE_KEY"
+		const val NO_GROW_ZONE = - 1
+		const val GROW_ZONE_SAVED_STATE_KEY = "GROW_ZONE_SAVED_STATE_KEY"
 	}
 }

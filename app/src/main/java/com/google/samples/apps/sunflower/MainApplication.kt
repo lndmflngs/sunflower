@@ -28,7 +28,7 @@ class MainApplication : Application(), SunflowerApplication {
 	override val unsplashFeature by lazy { UnsplashFeature() }
 
 	override val plantFeature by lazy {
-		with(databaseFeature) { PlantFeature(plantDao, gardenPlantingDao) }
+		PlantFeature(databaseFeature.plantDao, databaseFeature.gardenPlantingDao)
 	}
 
 }

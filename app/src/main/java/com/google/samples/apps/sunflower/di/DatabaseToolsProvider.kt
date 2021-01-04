@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.di.provider
+package com.google.samples.apps.sunflower.di
 
-import com.google.samples.apps.sunflower.feature.UnsplashFeature
+import com.google.samples.apps.sunflower.feature.DatabaseFeature
 
-interface NetworkToolsProvider {
+interface DatabaseToolsProvider {
 
-	val unsplashFeature: UnsplashFeature
+	val databaseFeature: DatabaseFeature
 }

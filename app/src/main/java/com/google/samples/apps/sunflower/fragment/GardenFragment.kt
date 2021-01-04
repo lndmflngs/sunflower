@@ -23,11 +23,10 @@ import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.adapters.GardenPlantingAdapter
-import com.google.samples.apps.sunflower.adapters.PLANT_LIST_PAGE_INDEX
+import com.google.samples.apps.sunflower.adapters.pager.PLANT_LIST_PAGE_INDEX
 import com.google.samples.apps.sunflower.databinding.FragmentGardenBinding
 import com.google.samples.apps.sunflower.extensions.lazyViewModel
 import com.google.samples.apps.sunflower.extensions.sunflowerApplication
-import com.google.samples.apps.sunflower.feature.PlantFeature
 import com.google.samples.apps.sunflower.viewmodels.GardenPlantingListViewModel
 
 class GardenFragment : BaseFragment() {
@@ -44,6 +43,7 @@ class GardenFragment : BaseFragment() {
 		savedInstanceState: Bundle?,
 	): View {
 		binding = FragmentGardenBinding.inflate(inflater, container, false)
+
 		val adapter = GardenPlantingAdapter()
 		binding.gardenList.adapter = adapter
 
@@ -57,7 +57,6 @@ class GardenFragment : BaseFragment() {
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-		getFeature<PlantFeature>().gardenPlantingRepository
 	}
 
 	private fun subscribeUi(adapter: GardenPlantingAdapter, binding: FragmentGardenBinding) {
@@ -69,8 +68,8 @@ class GardenFragment : BaseFragment() {
 
 	// TODO: convert to data binding if applicable
 	private fun navigateToPlantListPage() {
-		requireActivity().findViewById<ViewPager2>(R.id.view_pager).currentItem =
-			PLANT_LIST_PAGE_INDEX
+		val viewPager = requireActivity().findViewById<ViewPager2>(R.id.view_pager);
+		viewPager.currentItem = PLANT_LIST_PAGE_INDEX
 	}
 
 

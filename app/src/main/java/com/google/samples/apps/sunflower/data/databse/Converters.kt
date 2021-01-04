@@ -14,11 +14,21 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.di.provider
+package com.google.samples.apps.sunflower.data.databse
 
-import com.google.samples.apps.sunflower.feature.PlantFeature
+import androidx.room.TypeConverter
+import java.util.*
 
-interface PlantToolsProvider {
+/**
+ * Type converters to allow Room to reference complex data types.
+ */
+class Converters {
 
-	val plantFeature: PlantFeature
+	@TypeConverter
+	fun calendarToDatestamp(calendar: Calendar): Long = calendar.timeInMillis
+
+	@TypeConverter
+	fun datestampToCalendar(value: Long): Calendar {
+		return Calendar.getInstance().apply { timeInMillis = value }
+	}
 }

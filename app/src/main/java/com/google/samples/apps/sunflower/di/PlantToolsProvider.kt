@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data
+package com.google.samples.apps.sunflower.di
 
-/**
- * Repository module for handling data operations.
- *
- * Collecting from the Flows in [PlantDao] is main-safe.  Room supports Coroutines and moves the
- * query execution off of the main thread.
- */
-class PlantRepository(private val plantDao: PlantDao) {
+import com.google.samples.apps.sunflower.feature.PlantFeature
 
-	fun getPlants() = plantDao.getPlants()
+interface PlantToolsProvider {
 
-	fun getPlant(plantId: String) = plantDao.getPlant(plantId)
-
-	fun getPlantsWithGrowZoneNumber(growZoneNumber: Int) =
-		plantDao.getPlantsWithGrowZoneNumber(growZoneNumber)
+	val plantFeature: PlantFeature
 }

@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data
+package com.google.samples.apps.sunflower.data.databse.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.google.samples.apps.sunflower.data.databse.entity.Plant
 import kotlinx.coroutines.flow.Flow
 
 /**

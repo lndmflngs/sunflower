@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,24 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.viewmodels
+package com.google.samples.apps.sunflower.adapters.diffutil
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
+import androidx.recyclerview.widget.DiffUtil
 import com.google.samples.apps.sunflower.data.databse.PlantAndGardenPlantings
-import com.google.samples.apps.sunflower.data.databse.repository.GardenPlantingRepository
 
-class GardenPlantingListViewModel(
-	gardenPlantingRepository: GardenPlantingRepository,
-) : ViewModel() {
+internal class GardenPlantDiffCallback : DiffUtil.ItemCallback<PlantAndGardenPlantings>() {
 
-	val plantAndGardenPlantings: LiveData<List<PlantAndGardenPlantings>> =
-		gardenPlantingRepository.getPlantedGardens().asLiveData()
+	override fun areItemsTheSame(
+		oldItem: PlantAndGardenPlantings,
+		newItem: PlantAndGardenPlantings,
+	): Boolean {
+		return oldItem.plant.plantId == newItem.plant.plantId
+	}
+
+	override fun areContentsTheSame(
+		oldItem: PlantAndGardenPlantings,
+		newItem: PlantAndGardenPlantings,
+	): Boolean {
+		return oldItem.plant == newItem.plant
+	}
 }

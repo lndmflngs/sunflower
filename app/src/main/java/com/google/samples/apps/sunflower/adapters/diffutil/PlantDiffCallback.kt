@@ -14,11 +14,18 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.di.provider
+package com.google.samples.apps.sunflower.adapters.diffutil
 
-import com.google.samples.apps.sunflower.feature.DatabaseFeature
+import androidx.recyclerview.widget.DiffUtil
+import com.google.samples.apps.sunflower.data.databse.entity.Plant
 
-interface DatabaseToolsProvider {
+internal class PlantDiffCallback : DiffUtil.ItemCallback<Plant>() {
 
-	val databaseFeature: DatabaseFeature
+	override fun areItemsTheSame(oldItem: Plant, newItem: Plant): Boolean {
+		return oldItem.plantId == newItem.plantId
+	}
+
+	override fun areContentsTheSame(oldItem: Plant, newItem: Plant): Boolean {
+		return oldItem == newItem
+	}
 }

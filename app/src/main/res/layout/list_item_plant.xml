@@ -28,7 +28,7 @@
 
 		<variable
 				name="plant"
-				type="com.google.samples.apps.sunflower.data.Plant"
+				type="com.google.samples.apps.sunflower.data.databse.entity.Plant"
 				/>
 	</data>
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data
+package com.google.samples.apps.sunflower.data.databse.repository
+
+import com.google.samples.apps.sunflower.data.databse.dao.GardenPlantingDao
+import com.google.samples.apps.sunflower.data.databse.entity.GardenPlanting
+import kotlinx.coroutines.flow.Flow
 
 class GardenPlantingRepository(
 	private val gardenPlantingDao: GardenPlantingDao,
@@ -29,8 +33,9 @@ class GardenPlantingRepository(
 		gardenPlantingDao.deleteGardenPlanting(gardenPlanting)
 	}
 
-	fun isPlanted(plantId: String) =
-		gardenPlantingDao.isPlanted(plantId)
+	fun isPlanted(plantId: String): Flow<Boolean> {
+		return gardenPlantingDao.isPlanted(plantId)
+	}
 
 	fun getPlantedGardens() = gardenPlantingDao.getPlantedGardens()
 }

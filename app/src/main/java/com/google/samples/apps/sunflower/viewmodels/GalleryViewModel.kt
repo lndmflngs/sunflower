@@ -20,8 +20,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.google.samples.apps.sunflower.data.UnsplashPhoto
-import com.google.samples.apps.sunflower.data.UnsplashRepository
+import com.google.samples.apps.sunflower.data.remote.model.UnsplashPhoto
+import com.google.samples.apps.sunflower.data.remote.repository.UnsplashRepository
 import kotlinx.coroutines.flow.Flow
 
 class GalleryViewModel(
@@ -33,9 +33,12 @@ class GalleryViewModel(
 
 	fun searchPictures(queryString: String): Flow<PagingData<UnsplashPhoto>> {
 		currentQueryValue = queryString
-		val newResult: Flow<PagingData<UnsplashPhoto>> =
-			repository.getSearchResultStream(queryString).cachedIn(viewModelScope)
+		val newResult = getSearchResultStream(queryString)
 		currentSearchResult = newResult
 		return newResult
+	}
+
+	private fun getSearchResultStream(queryString: String): Flow<PagingData<UnsplashPhoto>> {
+		return repository.getSearchResultStream(queryString).cachedIn(viewModelScope)
 	}
 }

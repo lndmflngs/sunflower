@@ -21,9 +21,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.samples.apps.sunflower.BuildConfig
+import com.google.samples.apps.sunflower.data.databse.repository.GardenPlantingRepository
+import com.google.samples.apps.sunflower.data.databse.repository.PlantRepository
 import com.google.samples.apps.sunflower.fragment.PlantDetailFragment
-import com.google.samples.apps.sunflower.data.GardenPlantingRepository
-import com.google.samples.apps.sunflower.data.PlantRepository
 import kotlinx.coroutines.launch
 
 /**

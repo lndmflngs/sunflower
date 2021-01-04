@@ -17,7 +17,7 @@
 package com.google.samples.apps.sunflower.feature
 
 import com.google.samples.apps.sunflower.api.UnsplashService
-import com.google.samples.apps.sunflower.data.UnsplashRepository
+import com.google.samples.apps.sunflower.data.remote.repository.UnsplashRepository
 
 class UnsplashFeature : Feature {
 

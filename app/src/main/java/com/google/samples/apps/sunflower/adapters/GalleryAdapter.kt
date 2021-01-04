@@ -16,23 +16,23 @@
 
 package com.google.samples.apps.sunflower.adapters
 
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.google.samples.apps.sunflower.fragment.GalleryFragment
-import com.google.samples.apps.sunflower.adapters.GalleryAdapter.GalleryViewHolder
-import com.google.samples.apps.sunflower.data.UnsplashPhoto
+import com.google.samples.apps.sunflower.adapters.diffutil.GalleryDiffCallback
+import com.google.samples.apps.sunflower.adapters.holder.GalleryViewHolder
+import com.google.samples.apps.sunflower.data.remote.model.UnsplashPhoto
 import com.google.samples.apps.sunflower.databinding.ListItemPhotoBinding
+import com.google.samples.apps.sunflower.fragment.GalleryFragment
 
 /**
  * Adapter for the [RecyclerView] in [GalleryFragment].
  */
 
-class GalleryAdapter : PagingDataAdapter<UnsplashPhoto, GalleryViewHolder>(GalleryDiffCallback()) {
+internal class GalleryAdapter : PagingDataAdapter<UnsplashPhoto, GalleryViewHolder>(
+	GalleryDiffCallback()
+) {
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalleryViewHolder {
 		return GalleryViewHolder(
@@ -46,41 +46,11 @@ class GalleryAdapter : PagingDataAdapter<UnsplashPhoto, GalleryViewHolder>(Galle
 
 	override fun onBindViewHolder(holder: GalleryViewHolder, position: Int) {
 		val photo = getItem(position)
-		if (photo != null) {
-			holder.bind(photo)
-		}
-	}
-
-	class GalleryViewHolder(
-		private val binding: ListItemPhotoBinding,
-	) : RecyclerView.ViewHolder(binding.root) {
-
-		init {
-			binding.setClickListener { view ->
-				binding.photo?.let { photo ->
-					val uri = Uri.parse(photo.user.attributionUrl)
-					val intent = Intent(Intent.ACTION_VIEW, uri)
-					view.context.startActivity(intent)
-				}
-			}
+		checkNotNull(photo) {
+			return
 		}
 
-		fun bind(item: UnsplashPhoto) {
-			binding.apply {
-				photo = item
-				executePendingBindings()
-			}
-		}
-	}
-}
-
-private class GalleryDiffCallback : DiffUtil.ItemCallback<UnsplashPhoto>() {
-
-	override fun areItemsTheSame(oldItem: UnsplashPhoto, newItem: UnsplashPhoto): Boolean {
-		return oldItem.id == newItem.id
+		holder.bind(photo)
 	}
 
-	override fun areContentsTheSame(oldItem: UnsplashPhoto, newItem: UnsplashPhoto): Boolean {
-		return oldItem == newItem
-	}
 }

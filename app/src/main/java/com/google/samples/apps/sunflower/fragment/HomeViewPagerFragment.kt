@@ -24,9 +24,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.samples.apps.sunflower.R.drawable
 import com.google.samples.apps.sunflower.R.string
-import com.google.samples.apps.sunflower.adapters.MY_GARDEN_PAGE_INDEX
-import com.google.samples.apps.sunflower.adapters.PLANT_LIST_PAGE_INDEX
-import com.google.samples.apps.sunflower.adapters.SunflowerPagerAdapter
+import com.google.samples.apps.sunflower.adapters.pager.MY_GARDEN_PAGE_INDEX
+import com.google.samples.apps.sunflower.adapters.pager.PLANT_LIST_PAGE_INDEX
+import com.google.samples.apps.sunflower.adapters.pager.SunflowerPagerAdapter
 import com.google.samples.apps.sunflower.databinding.FragmentViewPagerBinding
 
 class HomeViewPagerFragment : BaseFragment() {
@@ -61,11 +61,11 @@ class HomeViewPagerFragment : BaseFragment() {
 		}
 	}
 
-	private fun getTabTitle(position: Int): String? {
+	private fun getTabTitle(position: Int): String {
 		return when (position) {
 			MY_GARDEN_PAGE_INDEX -> getString(string.my_garden_title)
 			PLANT_LIST_PAGE_INDEX -> getString(string.plant_list_title)
-			else -> null
+			else -> ""
 		}
 	}
 }

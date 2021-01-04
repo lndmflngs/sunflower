@@ -22,7 +22,7 @@
 
 	<data>
 
-		<import type="com.google.samples.apps.sunflower.data.Plant" />
+		<import type="com.google.samples.apps.sunflower.data.databse.entity.Plant" />
 
 		<variable
 				name="viewModel"
