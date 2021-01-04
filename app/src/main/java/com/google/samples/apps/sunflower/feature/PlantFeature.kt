@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,20 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.viewmodels
+package com.google.samples.apps.sunflower.feature
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
+import com.google.samples.apps.sunflower.data.GardenPlantingDao
 import com.google.samples.apps.sunflower.data.GardenPlantingRepository
-import com.google.samples.apps.sunflower.data.PlantAndGardenPlantings
+import com.google.samples.apps.sunflower.data.PlantDao
+import com.google.samples.apps.sunflower.data.PlantRepository
 
-class GardenPlantingListViewModel(
-	gardenPlantingRepository: GardenPlantingRepository,
-) : ViewModel() {
+class PlantFeature(
+	private val plantDao: PlantDao,
+	private val gardenPlantingDao: GardenPlantingDao,
+) : Feature {
 
-	val plantAndGardenPlantings: LiveData<List<PlantAndGardenPlantings>> =
-		gardenPlantingRepository.getPlantedGardens().asLiveData()
+	val plantRepository by lazy { PlantRepository(plantDao) }
+
+	val gardenPlantingRepository by lazy { GardenPlantingRepository(gardenPlantingDao) }
+
 }

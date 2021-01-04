@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,24 +14,25 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.di
+package com.google.samples.apps.sunflower.feature
 
 import android.content.Context
 import com.google.samples.apps.sunflower.data.AppDatabase
 import com.google.samples.apps.sunflower.data.GardenPlantingDao
 import com.google.samples.apps.sunflower.data.PlantDao
 
-class DatabaseModule {
+class DatabaseFeature(
+	private val context: Context,
+) : Feature {
 
-    fun provideAppDatabase(context: Context): AppDatabase {
-        return AppDatabase.getInstance(context)
-    }
+	val appDatabase: AppDatabase
+		get() = AppDatabase.getInstance(context)
 
-    fun providePlantDao(appDatabase: AppDatabase): PlantDao {
-        return appDatabase.plantDao()
-    }
+	val plantDao: PlantDao
+		get() = appDatabase.plantDao()
 
-    fun provideGardenPlantingDao(appDatabase: AppDatabase): GardenPlantingDao {
-        return appDatabase.gardenPlantingDao()
-    }
+
+	val gardenPlantingDao: GardenPlantingDao
+		get() = appDatabase.gardenPlantingDao()
+
 }

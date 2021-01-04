@@ -29,29 +29,31 @@ import com.google.samples.apps.sunflower.utilities.PLANT_DATA_FILENAME
 import kotlinx.coroutines.coroutineScope
 
 class SeedDatabaseWorker(
-    context: Context,
-    workerParams: WorkerParameters
+	context: Context,
+	workerParams: WorkerParameters,
 ) : CoroutineWorker(context, workerParams) {
-    override suspend fun doWork(): Result = coroutineScope {
-        try {
-            applicationContext.assets.open(PLANT_DATA_FILENAME).use { inputStream ->
-                JsonReader(inputStream.reader()).use { jsonReader ->
-                    val plantType = object : TypeToken<List<Plant>>() {}.type
-                    val plantList: List<Plant> = Gson().fromJson(jsonReader, plantType)
 
-                    val database = AppDatabase.getInstance(applicationContext)
-                    database.plantDao().insertAll(plantList)
+	override suspend fun doWork(): Result = coroutineScope {
+		try {
+			applicationContext.assets.open(PLANT_DATA_FILENAME).use { inputStream ->
+				JsonReader(inputStream.reader()).use { jsonReader ->
+					val plantType = object : TypeToken<List<Plant>>() {}.type
+					val plantList: List<Plant> = Gson().fromJson(jsonReader, plantType)
 
-                    Result.success()
-                }
-            }
-        } catch (ex: Exception) {
-            Log.e(TAG, "Error seeding database", ex)
-            Result.failure()
-        }
-    }
+					val database = AppDatabase.getInstance(applicationContext)
+					database.plantDao().insertAll(plantList)
 
-    companion object {
-        private const val TAG = "SeedDatabaseWorker"
-    }
+					Result.success()
+				}
+			}
+		} catch (ex: Exception) {
+			Log.e(TAG, "Error seeding database", ex)
+			Result.failure()
+		}
+	}
+
+	companion object {
+
+		private const val TAG = "SeedDatabaseWorker"
+	}
 }

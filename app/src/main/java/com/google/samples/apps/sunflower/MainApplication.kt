@@ -17,5 +17,18 @@
 package com.google.samples.apps.sunflower
 
 import android.app.Application
+import com.google.samples.apps.sunflower.feature.DatabaseFeature
+import com.google.samples.apps.sunflower.feature.PlantFeature
+import com.google.samples.apps.sunflower.feature.UnsplashFeature
 
-class MainApplication : Application()
+class MainApplication : Application(), SunflowerApplication {
+
+	override val databaseFeature by lazy { DatabaseFeature(this) }
+
+	override val unsplashFeature by lazy { UnsplashFeature() }
+
+	override val plantFeature by lazy {
+		with(databaseFeature) { PlantFeature(plantDao, gardenPlantingDao) }
+	}
+
+}

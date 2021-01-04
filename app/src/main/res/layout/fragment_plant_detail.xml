@@ -31,7 +31,7 @@
 
 		<variable
 				name="callback"
-				type="com.google.samples.apps.sunflower.PlantDetailFragment.Callback"
+				type="com.google.samples.apps.sunflower.fragment.PlantDetailFragment.Callback"
 				/>
 	</data>
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data
+package com.google.samples.apps.sunflower.activity
 
-import com.google.gson.annotations.SerializedName
+import android.os.Bundle
+import androidx.databinding.DataBindingUtil.setContentView
+import com.google.samples.apps.sunflower.R.layout
+import com.google.samples.apps.sunflower.databinding.ActivityGardenBinding
 
-/**
- * Data class that represents URLs available for a Unsplash photo.
- *
- * Although several photo sizes are available, this project uses only uses the `small` sized photo.
- * For more details, consult the API documentation
- * [here](https://unsplash.com/documentation#example-image-use).
- */
-data class UnsplashPhotoUrls(
-	@field:SerializedName("small")
-	val small: String,
-)
+class GardenActivity : BaseActivity() {
+
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		setContentView<ActivityGardenBinding>(this, layout.activity_garden)
+	}
+}

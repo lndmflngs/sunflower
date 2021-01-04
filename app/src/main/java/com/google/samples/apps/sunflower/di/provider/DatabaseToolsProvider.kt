@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.di
+package com.google.samples.apps.sunflower.di.provider
 
-import com.google.samples.apps.sunflower.api.UnsplashService
+import com.google.samples.apps.sunflower.feature.DatabaseFeature
 
-class NetworkModule {
+interface DatabaseToolsProvider {
 
-    fun provideUnsplashService(): UnsplashService {
-        return UnsplashService.create()
-    }
-
+	val databaseFeature: DatabaseFeature
 }

@@ -23,69 +23,70 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.google.samples.apps.sunflower.HomeViewPagerFragmentDirections
-import com.google.samples.apps.sunflower.PlantListFragment
 import com.google.samples.apps.sunflower.data.Plant
 import com.google.samples.apps.sunflower.databinding.ListItemPlantBinding
+import com.google.samples.apps.sunflower.fragment.HomeViewPagerFragmentDirections
+import com.google.samples.apps.sunflower.fragment.PlantListFragment
 
 /**
  * Adapter for the [RecyclerView] in [PlantListFragment].
  */
 class PlantAdapter : ListAdapter<Plant, RecyclerView.ViewHolder>(PlantDiffCallback()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return PlantViewHolder(
-            ListItemPlantBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-        )
-    }
+	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+		return PlantViewHolder(
+			ListItemPlantBinding.inflate(
+				LayoutInflater.from(parent.context),
+				parent,
+				false
+			)
+		)
+	}
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val plant = getItem(position)
-        (holder as PlantViewHolder).bind(plant)
-    }
+	override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+		val plant = getItem(position)
+		(holder as PlantViewHolder).bind(plant)
+	}
 
-    class PlantViewHolder(
-        private val binding: ListItemPlantBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
-        init {
-            binding.setClickListener {
-                binding.plant?.let { plant ->
-                    navigateToPlant(plant, it)
-                }
-            }
-        }
+	class PlantViewHolder(
+		private val binding: ListItemPlantBinding,
+	) : RecyclerView.ViewHolder(binding.root) {
 
-        private fun navigateToPlant(
-            plant: Plant,
-            view: View
-        ) {
-            val direction =
-                HomeViewPagerFragmentDirections.actionViewPagerFragmentToPlantDetailFragment(
-                    plant.plantId
-                )
-            view.findNavController().navigate(direction)
-        }
+		init {
+			binding.setClickListener {
+				binding.plant?.let { plant ->
+					navigateToPlant(plant, it)
+				}
+			}
+		}
 
-        fun bind(item: Plant) {
-            binding.apply {
-                plant = item
-                executePendingBindings()
-            }
-        }
-    }
+		private fun navigateToPlant(
+			plant: Plant,
+			view: View,
+		) {
+			val direction =
+				HomeViewPagerFragmentDirections.actionViewPagerFragmentToPlantDetailFragment(
+					plant.plantId
+				)
+			view.findNavController().navigate(direction)
+		}
+
+		fun bind(item: Plant) {
+			binding.apply {
+				plant = item
+				executePendingBindings()
+			}
+		}
+	}
 }
 
 private class PlantDiffCallback : DiffUtil.ItemCallback<Plant>() {
 
-    override fun areItemsTheSame(oldItem: Plant, newItem: Plant): Boolean {
-        return oldItem.plantId == newItem.plantId
-    }
+	override fun areItemsTheSame(oldItem: Plant, newItem: Plant): Boolean {
+		return oldItem.plantId == newItem.plantId
+	}
 
-    override fun areContentsTheSame(oldItem: Plant, newItem: Plant): Boolean {
-        return oldItem == newItem
-    }
+	override fun areContentsTheSame(oldItem: Plant, newItem: Plant): Boolean {
+		return oldItem == newItem
+	}
 }

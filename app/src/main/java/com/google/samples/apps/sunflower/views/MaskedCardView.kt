@@ -32,32 +32,33 @@ import com.google.android.material.shape.ShapeAppearancePathProvider
  * working around it for now.
  */
 class MaskedCardView @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyle: Int = R.attr.materialCardViewStyle
+	context: Context,
+	attrs: AttributeSet? = null,
+	defStyle: Int = R.attr.materialCardViewStyle,
 ) : MaterialCardView(context, attrs, defStyle) {
-    @SuppressLint("RestrictedApi")
-    private val pathProvider = ShapeAppearancePathProvider()
-    private val path: Path = Path()
-    private val shapeAppearance: ShapeAppearanceModel = ShapeAppearanceModel.builder(
-        context,
-        attrs,
-        defStyle,
-        R.style.Widget_MaterialComponents_CardView
-    ).build()
 
-    private val rectF = RectF(0f, 0f, 0f, 0f)
+	@SuppressLint("RestrictedApi")
+	private val pathProvider = ShapeAppearancePathProvider()
+	private val path: Path = Path()
+	private val shapeAppearance: ShapeAppearanceModel = ShapeAppearanceModel.builder(
+		context,
+		attrs,
+		defStyle,
+		R.style.Widget_MaterialComponents_CardView
+	).build()
 
-    override fun onDraw(canvas: Canvas) {
-        canvas.clipPath(path)
-        super.onDraw(canvas)
-    }
+	private val rectF = RectF(0f, 0f, 0f, 0f)
 
-    @SuppressLint("RestrictedApi")
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
-        rectF.right = w.toFloat()
-        rectF.bottom = h.toFloat()
-        pathProvider.calculatePath(shapeAppearance, 1f, rectF, path)
-        super.onSizeChanged(w, h, oldw, oldh)
-    }
+	override fun onDraw(canvas: Canvas) {
+		canvas.clipPath(path)
+		super.onDraw(canvas)
+	}
+
+	@SuppressLint("RestrictedApi")
+	override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+		rectF.right = w.toFloat()
+		rectF.bottom = h.toFloat()
+		pathProvider.calculatePath(shapeAppearance, 1f, rectF, path)
+		super.onSizeChanged(w, h, oldw, oldh)
+	}
 }

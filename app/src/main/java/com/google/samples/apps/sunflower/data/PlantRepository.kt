@@ -24,10 +24,10 @@ package com.google.samples.apps.sunflower.data
  */
 class PlantRepository(private val plantDao: PlantDao) {
 
-    fun getPlants() = plantDao.getPlants()
+	fun getPlants() = plantDao.getPlants()
 
-    fun getPlant(plantId: String) = plantDao.getPlant(plantId)
+	fun getPlant(plantId: String) = plantDao.getPlant(plantId)
 
-    fun getPlantsWithGrowZoneNumber(growZoneNumber: Int) =
-        plantDao.getPlantsWithGrowZoneNumber(growZoneNumber)
+	fun getPlantsWithGrowZoneNumber(growZoneNumber: Int) =
+		plantDao.getPlantsWithGrowZoneNumber(growZoneNumber)
 }

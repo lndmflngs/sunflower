@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data
+package com.google.samples.apps.sunflower.feature
 
-import com.google.gson.annotations.SerializedName
+import com.google.samples.apps.sunflower.api.UnsplashService
+import com.google.samples.apps.sunflower.data.UnsplashRepository
 
-/**
- * Data class that represents URLs available for a Unsplash photo.
- *
- * Although several photo sizes are available, this project uses only uses the `small` sized photo.
- * For more details, consult the API documentation
- * [here](https://unsplash.com/documentation#example-image-use).
- */
-data class UnsplashPhotoUrls(
-	@field:SerializedName("small")
-	val small: String,
-)
+class UnsplashFeature : Feature {
+
+	val unsplashService by lazy { UnsplashService.create() }
+
+	val unsplashRepository by lazy { UnsplashRepository(unsplashService) }
+}

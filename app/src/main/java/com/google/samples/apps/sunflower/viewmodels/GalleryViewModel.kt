@@ -25,16 +25,17 @@ import com.google.samples.apps.sunflower.data.UnsplashRepository
 import kotlinx.coroutines.flow.Flow
 
 class GalleryViewModel(
-    private val repository: UnsplashRepository
+	private val repository: UnsplashRepository,
 ) : ViewModel() {
-    private var currentQueryValue: String? = null
-    private var currentSearchResult: Flow<PagingData<UnsplashPhoto>>? = null
 
-    fun searchPictures(queryString: String): Flow<PagingData<UnsplashPhoto>> {
-        currentQueryValue = queryString
-        val newResult: Flow<PagingData<UnsplashPhoto>> =
-            repository.getSearchResultStream(queryString).cachedIn(viewModelScope)
-        currentSearchResult = newResult
-        return newResult
-    }
+	private var currentQueryValue: String? = null
+	private var currentSearchResult: Flow<PagingData<UnsplashPhoto>>? = null
+
+	fun searchPictures(queryString: String): Flow<PagingData<UnsplashPhoto>> {
+		currentQueryValue = queryString
+		val newResult: Flow<PagingData<UnsplashPhoto>> =
+			repository.getSearchResultStream(queryString).cachedIn(viewModelScope)
+		currentSearchResult = newResult
+		return newResult
+	}
 }
