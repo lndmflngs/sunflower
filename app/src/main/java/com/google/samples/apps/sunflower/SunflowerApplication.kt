@@ -17,7 +17,10 @@
 package com.google.samples.apps.sunflower
 
 import com.google.samples.apps.sunflower.di.DatabaseToolsProvider
+import com.google.samples.apps.sunflower.di.LaunchersToolsProvider
 import com.google.samples.apps.sunflower.di.NetworkToolsProvider
 import com.google.samples.apps.sunflower.di.PlantToolsProvider
+import com.google.samples.apps.sunflower.di.WrappersToolsProvider
 
-interface SunflowerApplication : DatabaseToolsProvider, NetworkToolsProvider, PlantToolsProvider
+interface SunflowerApplication : DatabaseToolsProvider, NetworkToolsProvider, PlantToolsProvider,
+	WrappersToolsProvider, LaunchersToolsProvider

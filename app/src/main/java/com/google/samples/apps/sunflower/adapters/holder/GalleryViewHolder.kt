@@ -16,19 +16,19 @@
 
 package com.google.samples.apps.sunflower.adapters.holder
 
-import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import androidx.recyclerview.widget.RecyclerView
 import com.google.samples.apps.sunflower.data.remote.model.UnsplashPhoto
 import com.google.samples.apps.sunflower.databinding.ListItemPhotoBinding
+import com.google.samples.apps.sunflower.launcher.UnsplashLauncher
+import com.google.samples.apps.sunflower.launcher.args.UnsplashArgs
 
 internal class GalleryViewHolder(
 	private val binding: ListItemPhotoBinding,
+	private val unsplashLauncher: UnsplashLauncher,
 ) : RecyclerView.ViewHolder(binding.root) {
 
 	init {
-		binding.setClickListener { view -> openPhoto(view.context, binding.photo) }
+		binding.setClickListener { openPhoto(binding.photo) }
 	}
 
 	fun bind(item: UnsplashPhoto) = binding.apply {
@@ -36,13 +36,12 @@ internal class GalleryViewHolder(
 		executePendingBindings()
 	}
 
-	private fun openPhoto(context: Context, photo: UnsplashPhoto?) {
+	private fun openPhoto(photo: UnsplashPhoto?) {
 		checkNotNull(photo) {
 			return
 		}
 
-		val uri = Uri.parse(photo.user.attributionUrl)
-		val intent = Intent(Intent.ACTION_VIEW, uri)
-		context.startActivity(intent)
+		val unsplashArgs = UnsplashArgs(photo.user.attributionUrl)
+		unsplashLauncher.launch(unsplashArgs)
 	}
 }

@@ -32,8 +32,18 @@ data class UnsplashUser(
 	val username: String,
 ) {
 
+	private companion object {
+
+		const val BASE_URL = "https://unsplash.com/"
+		const val SOURCE = "?utm_source=sunflower&utm_medium=referral"
+	}
+
 	val attributionUrl: String
 		get() {
-			return "https://unsplash.com/$username?utm_source=sunflower&utm_medium=referral"
+			return buildString {
+				append(BASE_URL)
+				append(username)
+				append(SOURCE)
+			}
 		}
 }

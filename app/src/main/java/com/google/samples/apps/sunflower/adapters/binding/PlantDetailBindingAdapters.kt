@@ -26,6 +26,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.samples.apps.sunflower.R
+import com.google.samples.apps.sunflower.extensions.sunflowerApplication
 
 @BindingAdapter("imageFromUrl")
 fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
@@ -58,8 +59,8 @@ fun bindRenderHtml(view: TextView, description: String?) = with(view) {
 
 @BindingAdapter("wateringText")
 fun bindWateringText(textView: TextView, wateringInterval: Int) = with(textView) {
-	val resources = context.resources
-	val quantityString = resources.getQuantityString(
+	val resourceReader = textView.sunflowerApplication.wrappersFeature.resourceReader
+	val quantityString = resourceReader.quantityString(
 		R.plurals.watering_needs_suffix,
 		wateringInterval,
 		wateringInterval

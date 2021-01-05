@@ -14,18 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.extensions
+package com.google.samples.apps.sunflower.launcher
 
-import android.app.Activity
-import android.view.View
-import androidx.fragment.app.Fragment
-import com.google.samples.apps.sunflower.SunflowerApplication
+import android.content.Intent
 
-val Activity.sunflowerApplication: SunflowerApplication
-	get() = application as SunflowerApplication
+interface NoArgsLauncher {
 
-val Fragment.sunflowerApplication: SunflowerApplication
-	get() = requireActivity().sunflowerApplication
+	fun launch()
 
-val View.sunflowerApplication: SunflowerApplication
-	get() = context.applicationContext as SunflowerApplication
+	fun buildIntent(): Intent
+}

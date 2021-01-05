@@ -18,8 +18,10 @@ package com.google.samples.apps.sunflower
 
 import android.app.Application
 import com.google.samples.apps.sunflower.feature.DatabaseFeature
+import com.google.samples.apps.sunflower.feature.LaunchersFeature
 import com.google.samples.apps.sunflower.feature.PlantFeature
 import com.google.samples.apps.sunflower.feature.UnsplashFeature
+import com.google.samples.apps.sunflower.feature.WrappersFeature
 
 class MainApplication : Application(), SunflowerApplication {
 
@@ -30,5 +32,9 @@ class MainApplication : Application(), SunflowerApplication {
 	override val plantFeature by lazy {
 		PlantFeature(databaseFeature.plantDao, databaseFeature.gardenPlantingDao)
 	}
+
+	override val wrappersFeature by lazy { WrappersFeature(this) }
+
+	override val launchersFeature by lazy { LaunchersFeature(this) }
 
 }

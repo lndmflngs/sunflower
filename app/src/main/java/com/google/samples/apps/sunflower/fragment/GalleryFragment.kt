@@ -26,17 +26,19 @@ import androidx.navigation.fragment.navArgs
 import com.google.samples.apps.sunflower.adapters.GalleryAdapter
 import com.google.samples.apps.sunflower.databinding.FragmentGalleryBinding
 import com.google.samples.apps.sunflower.extensions.lazyViewModel
+import com.google.samples.apps.sunflower.feature.LaunchersFeature
 import com.google.samples.apps.sunflower.feature.UnsplashFeature
 import com.google.samples.apps.sunflower.viewmodels.GalleryViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-
 class GalleryFragment : BaseFragment() {
 
-	private val adapter = GalleryAdapter()
 	private val args: GalleryFragmentArgs by navArgs()
+
+	private val adapter = GalleryAdapter(getFeature<LaunchersFeature>().unsplashLauncher)
+
 	private var searchJob: Job? = null
 
 	private val viewModel: GalleryViewModel by lazyViewModel {
@@ -51,14 +53,24 @@ class GalleryFragment : BaseFragment() {
 		val binding = FragmentGalleryBinding.inflate(inflater, container, false)
 		context ?: return binding.root
 
-		binding.photoList.adapter = adapter
-		search(args.plantName)
-
-		binding.toolbar.setNavigationOnClickListener { view ->
-			view.findNavController().navigateUp()
+		with(binding) {
+			initAdapter(this)
+			initToolbar(this)
 		}
 
+		search(args.plantName)
+
 		return binding.root
+	}
+
+	private fun initToolbar(binding: FragmentGalleryBinding) = with(binding) {
+		toolbar.setNavigationOnClickListener { view ->
+			view.findNavController().navigateUp()
+		}
+	}
+
+	private fun initAdapter(binding: FragmentGalleryBinding) = with(binding) {
+		photoList.adapter = adapter
 	}
 
 	private fun search(query: String) {

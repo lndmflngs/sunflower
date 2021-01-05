@@ -16,16 +16,20 @@
 
 package com.google.samples.apps.sunflower.extensions
 
-import android.app.Activity
-import android.view.View
 import androidx.fragment.app.Fragment
-import com.google.samples.apps.sunflower.SunflowerApplication
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 
-val Activity.sunflowerApplication: SunflowerApplication
-	get() = application as SunflowerApplication
+fun <T : Any> LiveData<T>.requireValue(): T = checkNotNull(value)
 
-val Fragment.sunflowerApplication: SunflowerApplication
-	get() = requireActivity().sunflowerApplication
+fun <T> MutableLiveData<T>.onNext(next: T) {
+	value = next
+}
 
-val View.sunflowerApplication: SunflowerApplication
-	get() = context.applicationContext as SunflowerApplication
+inline fun <T, LD : LiveData<T>> Fragment.observe(
+	liveData: LD,
+	crossinline block: (T) -> Unit,
+) {
+	liveData.observe(viewLifecycleOwner, Observer { block(it) })
+}

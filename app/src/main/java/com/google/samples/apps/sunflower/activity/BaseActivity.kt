@@ -17,18 +17,17 @@
 package com.google.samples.apps.sunflower.activity
 
 import android.app.Activity
-import com.google.samples.apps.sunflower.extensions.isTypeOf
 import com.google.samples.apps.sunflower.feature.Feature
 import kotlin.reflect.KProperty1
 import kotlin.reflect.full.declaredMemberProperties
+import kotlin.reflect.jvm.javaType
 
 open class BaseActivity : Activity() {
 
 	inline fun <reified T : Feature> getFeature(): T {
 		val declaredMemberProperties = application::class::declaredMemberProperties
-		val feature = declaredMemberProperties.get().find { it.isTypeOf(T::class) }
-		return (feature as KProperty1<Any, *>).get(application) as T
+		val features = declaredMemberProperties.get().map { it.returnType.javaType to it }.toMap()
+		return (features[T::class.javaObjectType] as KProperty1<Any, *>).get(application) as T
 	}
 
 }
-

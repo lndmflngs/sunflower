@@ -25,22 +25,24 @@ import com.google.samples.apps.sunflower.adapters.holder.GalleryViewHolder
 import com.google.samples.apps.sunflower.data.remote.model.UnsplashPhoto
 import com.google.samples.apps.sunflower.databinding.ListItemPhotoBinding
 import com.google.samples.apps.sunflower.fragment.GalleryFragment
+import com.google.samples.apps.sunflower.launcher.UnsplashLauncher
 
 /**
  * Adapter for the [RecyclerView] in [GalleryFragment].
  */
 
-internal class GalleryAdapter : PagingDataAdapter<UnsplashPhoto, GalleryViewHolder>(
-	GalleryDiffCallback()
-) {
+internal class GalleryAdapter(
+	private val unsplashLauncher: UnsplashLauncher,
+) : PagingDataAdapter<UnsplashPhoto, GalleryViewHolder>(GalleryDiffCallback()) {
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalleryViewHolder {
 		return GalleryViewHolder(
-			ListItemPhotoBinding.inflate(
+			binding = ListItemPhotoBinding.inflate(
 				LayoutInflater.from(parent.context),
 				parent,
 				false
-			)
+			),
+			unsplashLauncher = unsplashLauncher
 		)
 	}
 

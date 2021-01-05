@@ -14,18 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.extensions
+package com.google.samples.apps.sunflower.validator
 
-import android.app.Activity
-import android.view.View
-import androidx.fragment.app.Fragment
-import com.google.samples.apps.sunflower.SunflowerApplication
+object UrlValidator : Validator<String> {
 
-val Activity.sunflowerApplication: SunflowerApplication
-	get() = application as SunflowerApplication
-
-val Fragment.sunflowerApplication: SunflowerApplication
-	get() = requireActivity().sunflowerApplication
-
-val View.sunflowerApplication: SunflowerApplication
-	get() = context.applicationContext as SunflowerApplication
+	override fun isValid(value: String): Boolean {
+		TODO("Not yet implemented")
+	}
+}

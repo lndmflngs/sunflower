@@ -26,6 +26,7 @@ import com.google.samples.apps.sunflower.adapters.GardenPlantingAdapter
 import com.google.samples.apps.sunflower.adapters.pager.PLANT_LIST_PAGE_INDEX
 import com.google.samples.apps.sunflower.databinding.FragmentGardenBinding
 import com.google.samples.apps.sunflower.extensions.lazyViewModel
+import com.google.samples.apps.sunflower.extensions.observe
 import com.google.samples.apps.sunflower.extensions.sunflowerApplication
 import com.google.samples.apps.sunflower.viewmodels.GardenPlantingListViewModel
 
@@ -55,12 +56,8 @@ class GardenFragment : BaseFragment() {
 		return binding.root
 	}
 
-	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-		super.onViewCreated(view, savedInstanceState)
-	}
-
 	private fun subscribeUi(adapter: GardenPlantingAdapter, binding: FragmentGardenBinding) {
-		viewModel.plantAndGardenPlantings.observe(viewLifecycleOwner) { result ->
+		observe(viewModel.plantAndGardenPlantings) { result ->
 			binding.hasPlantings = ! result.isNullOrEmpty()
 			adapter.submitList(result)
 		}
@@ -71,6 +68,5 @@ class GardenFragment : BaseFragment() {
 		val viewPager = requireActivity().findViewById<ViewPager2>(R.id.view_pager);
 		viewPager.currentItem = PLANT_LIST_PAGE_INDEX
 	}
-
 
 }

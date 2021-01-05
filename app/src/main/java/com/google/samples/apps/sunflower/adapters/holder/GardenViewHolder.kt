@@ -29,9 +29,7 @@ internal class GardenViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
 	init {
-		binding.setClickListener { view ->
-			navigateToPlant(binding.viewModel?.plantId, view)
-		}
+		binding.setClickListener { view -> navigateToPlant(binding.viewModel?.plantId, view) }
 	}
 
 	fun bind(plantings: PlantAndGardenPlantings) = with(binding) {

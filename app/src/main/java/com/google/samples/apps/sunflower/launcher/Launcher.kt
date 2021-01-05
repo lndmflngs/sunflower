@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.extensions
+package com.google.samples.apps.sunflower.launcher
 
-import kotlin.reflect.KClass
-import kotlin.reflect.KProperty
-import kotlin.reflect.jvm.javaType
+import android.content.Intent
+import com.google.samples.apps.sunflower.launcher.args.LaunchArgs
 
-inline fun <reified T : Any> KProperty<*>.isTypeOf(klass: KClass<T>): Boolean {
-	return returnType.javaType == klass.javaObjectType
+interface Launcher<T : LaunchArgs> {
+
+	fun launch(launchArgs: T)
+
+	fun buildIntent(launchArgs: T): Intent
 }
