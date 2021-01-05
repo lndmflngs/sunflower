@@ -20,10 +20,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.google.samples.apps.sunflower.BuildConfig
 import com.google.samples.apps.sunflower.data.databse.repository.GardenPlantingRepository
 import com.google.samples.apps.sunflower.data.databse.repository.PlantRepository
 import com.google.samples.apps.sunflower.fragment.PlantDetailFragment
+import com.google.samples.apps.sunflower.validator.Validator
+import com.google.samples.apps.sunflower.wrappers.BuildConfigWrapper
 import kotlinx.coroutines.launch
 
 /**
@@ -32,6 +33,8 @@ import kotlinx.coroutines.launch
 class PlantDetailViewModel constructor(
 	plantRepository: PlantRepository,
 	private val gardenPlantingRepository: GardenPlantingRepository,
+	private val keyValidator: Validator<String>,
+	private val buildConfigWrapper: BuildConfigWrapper,
 	private val plantId: String,
 ) : ViewModel() {
 
@@ -44,7 +47,7 @@ class PlantDetailViewModel constructor(
 		}
 	}
 
-	fun hasValidUnsplashKey() = (BuildConfig.UNSPLASH_ACCESS_KEY != "null")
+	fun hasValidUnsplashKey() = keyValidator.isValid(buildConfigWrapper.unsplashAccessKey)
 
 	interface AssistedFactory {
 

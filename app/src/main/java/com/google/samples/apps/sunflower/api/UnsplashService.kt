@@ -17,12 +17,12 @@
 package com.google.samples.apps.sunflower.api
 
 import com.google.samples.apps.sunflower.BuildConfig
+import com.google.samples.apps.sunflower.BuildConfig.BASE_URL
 import com.google.samples.apps.sunflower.data.remote.model.UnsplashSearchResponse
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import okhttp3.logging.HttpLoggingInterceptor.Level
+import retrofit2.Converter
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -45,19 +45,18 @@ interface UnsplashService {
 
 	companion object {
 
-		private const val BASE_URL = "https://api.unsplash.com/"
-
-		fun create(): UnsplashService {
-			val logger = HttpLoggingInterceptor().apply { level = Level.BASIC }
-
+		fun create(
+			loggingInterceptor: Interceptor,
+			factory: Converter.Factory,
+		): UnsplashService {
 			val client = OkHttpClient.Builder()
-				.addInterceptor(logger)
+				.addInterceptor(loggingInterceptor)
 				.build()
 
 			return Retrofit.Builder()
 				.baseUrl(BASE_URL)
 				.client(client)
-				.addConverterFactory(GsonConverterFactory.create())
+				.addConverterFactory(factory)
 				.build()
 				.create(UnsplashService::class.java)
 		}

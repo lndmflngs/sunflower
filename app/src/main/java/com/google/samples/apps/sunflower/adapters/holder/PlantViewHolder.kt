@@ -28,9 +28,7 @@ internal class PlantViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
 	init {
-		binding.setClickListener { view ->
-			navigateToPlant(binding.plant?.plantId, view)
-		}
+		binding.setClickListener { view -> navigateToPlant(binding.plant?.plantId, view) }
 	}
 
 	fun bind(item: Plant) = binding.apply {

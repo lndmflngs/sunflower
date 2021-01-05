@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.google.samples.apps.sunflower.data.databse.AppDatabase
 import com.google.samples.apps.sunflower.data.databse.entity.Plant
-import com.google.samples.apps.sunflower.utilities.PLANT_DATA_FILENAME
+import com.google.samples.apps.sunflower.feature.PlantFeature.Companion.PLANT_DATA_FILENAME
 import kotlinx.coroutines.coroutineScope
 
 class SeedDatabaseWorker(
@@ -58,8 +58,8 @@ class SeedDatabaseWorker(
 		}
 	}
 
-	companion object {
+	private companion object {
 
-		private const val TAG = "SeedDatabaseWorker"
+		const val TAG = "SeedDatabaseWorker"
 	}
 }

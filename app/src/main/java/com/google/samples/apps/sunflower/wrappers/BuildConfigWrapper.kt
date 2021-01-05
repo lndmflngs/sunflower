@@ -20,6 +20,8 @@ import com.google.samples.apps.sunflower.BuildConfig
 
 interface BuildConfigWrapper {
 
+	val unsplashBaseUrl: String
+
 	val unsplashAccessKey: String
 
 	val isDebug: Boolean
@@ -45,11 +47,13 @@ class SunflowerBuildConfigWrapper : BuildConfigWrapper {
 			return accessKey
 		}
 
+	override val unsplashBaseUrl: String
+		get() = BuildConfig.BASE_URL
+
 	override val isDebug: Boolean
 		get() = BuildConfig.BUILD_TYPE == "debug"
 
 	override val isDev: Boolean
 		get() = BuildConfig.FLAVOR == "dev"
-
 
 }

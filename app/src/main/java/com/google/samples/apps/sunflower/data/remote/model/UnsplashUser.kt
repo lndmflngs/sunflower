@@ -17,6 +17,7 @@
 package com.google.samples.apps.sunflower.data.remote.model
 
 import com.google.gson.annotations.SerializedName
+import com.google.samples.apps.sunflower.BuildConfig.BASE_URL
 
 /**
  * Data class that represents a user from Unsplash.
@@ -34,7 +35,6 @@ data class UnsplashUser(
 
 	private companion object {
 
-		const val BASE_URL = "https://unsplash.com/"
 		const val SOURCE = "?utm_source=sunflower&utm_medium=referral"
 	}
 

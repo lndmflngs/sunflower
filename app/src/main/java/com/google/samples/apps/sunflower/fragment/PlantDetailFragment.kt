@@ -37,7 +37,10 @@ import com.google.samples.apps.sunflower.R.string
 import com.google.samples.apps.sunflower.data.databse.entity.Plant
 import com.google.samples.apps.sunflower.databinding.FragmentPlantDetailBinding
 import com.google.samples.apps.sunflower.feature.PlantFeature
+import com.google.samples.apps.sunflower.feature.WrappersFeature
 import com.google.samples.apps.sunflower.fragment.PlantDetailFragment.Callback
+import com.google.samples.apps.sunflower.fragment.PlantDetailFragmentDirections.Companion.actionPlantDetailFragmentToGalleryFragment
+import com.google.samples.apps.sunflower.validator.UnsplashKeyValidator
 import com.google.samples.apps.sunflower.viewmodels.PlantDetailViewModel
 
 /**
@@ -52,7 +55,9 @@ class PlantDetailFragment : BaseFragment() {
 			return PlantDetailViewModel(
 				plantRepository = getFeature<PlantFeature>().plantRepository,
 				gardenPlantingRepository = getFeature<PlantFeature>().gardenPlantingRepository,
-				plantId = plantId,
+				keyValidator = UnsplashKeyValidator,
+				buildConfigWrapper = getFeature<WrappersFeature>().buildConfigWrapper,
+				plantId = plantId
 			)
 		}
 	}
@@ -136,8 +141,7 @@ class PlantDetailFragment : BaseFragment() {
 
 	private fun navigateToGallery() {
 		plantDetailViewModel.plant.value?.let { plant ->
-			val direction =
-				PlantDetailFragmentDirections.actionPlantDetailFragmentToGalleryFragment(plant.name)
+			val direction = actionPlantDetailFragmentToGalleryFragment(plant.name)
 			findNavController().navigate(direction)
 		}
 	}

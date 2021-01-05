@@ -28,7 +28,7 @@ import com.google.samples.apps.sunflower.data.databse.dao.GardenPlantingDao
 import com.google.samples.apps.sunflower.data.databse.dao.PlantDao
 import com.google.samples.apps.sunflower.data.databse.entity.GardenPlanting
 import com.google.samples.apps.sunflower.data.databse.entity.Plant
-import com.google.samples.apps.sunflower.utilities.DATABASE_NAME
+import com.google.samples.apps.sunflower.feature.DatabaseFeature.Companion.DATABASE_NAME
 import com.google.samples.apps.sunflower.workers.SeedDatabaseWorker
 
 /**

@@ -26,6 +26,11 @@ class PlantFeature(
 	private val gardenPlantingDao: GardenPlantingDao,
 ) : Feature {
 
+	companion object {
+
+		const val PLANT_DATA_FILENAME = "plants.json"
+	}
+
 	val plantRepository by lazy { PlantRepository(plantDao) }
 
 	val gardenPlantingRepository by lazy { GardenPlantingRepository(gardenPlantingDao) }

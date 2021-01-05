@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.utilities
+package com.google.samples.apps.sunflower.validator
 
-/**
- * Constants used throughout the app.
- */
-const val DATABASE_NAME = "sunflower-db"
-const val PLANT_DATA_FILENAME = "plants.json"
+object UnsplashKeyValidator : Validator<String> {
+
+	override fun isValid(value: String): Boolean {
+		return value.isNotEmpty() && value != "null"
+	}
+}

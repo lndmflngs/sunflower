@@ -19,14 +19,16 @@ package com.google.samples.apps.sunflower.launcher
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import com.google.samples.apps.sunflower.extensions.EMPTY_INTENT
 import com.google.samples.apps.sunflower.launcher.args.UnsplashArgs
-import com.google.samples.apps.sunflower.validator.UrlValidator
+import com.google.samples.apps.sunflower.validator.Validator
 
-class UnsplashLauncher(context: Context) : ContextLauncher<Context, UnsplashArgs>(context) {
+class UnsplashLauncher(
+	context: Context,
+	private val urlValidator: Validator<String>,
+) : ContextLauncher<Context, UnsplashArgs>(context) {
 
 	private val String.isValidUrl: Boolean
-		get() = UrlValidator.isValid(this)
+		get() = urlValidator.isValid(this)
 
 	override fun launch(launchArgs: UnsplashArgs) = with(context) {
 		val intent = buildIntent(launchArgs)

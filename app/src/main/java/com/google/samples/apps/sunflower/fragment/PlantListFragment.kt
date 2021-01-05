@@ -27,6 +27,7 @@ import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.adapters.PlantAdapter
 import com.google.samples.apps.sunflower.databinding.FragmentPlantListBinding
 import com.google.samples.apps.sunflower.extensions.lazyViewModel
+import com.google.samples.apps.sunflower.extensions.observe
 import com.google.samples.apps.sunflower.feature.PlantFeature
 import com.google.samples.apps.sunflower.viewmodels.PlantListViewModel
 
@@ -68,7 +69,7 @@ class PlantListFragment : BaseFragment() {
 	}
 
 	private fun subscribeUi(adapter: PlantAdapter) {
-		viewModel.plants.observe(viewLifecycleOwner) { plants ->
+		observe(viewModel.plants) { plants ->
 			adapter.submitList(plants)
 		}
 	}

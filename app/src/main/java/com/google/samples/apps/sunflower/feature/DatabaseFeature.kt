@@ -25,6 +25,11 @@ class DatabaseFeature(
 	private val context: Context,
 ) : Feature {
 
+	companion object {
+
+		const val DATABASE_NAME = "sunflower-db"
+	}
+
 	val appDatabase: AppDatabase
 		get() = AppDatabase.getInstance(context)
 

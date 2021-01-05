@@ -39,6 +39,7 @@ android {
 
         // Consult the README on instructions for setting up Unsplash API key
         buildConfigField("String", "UNSPLASH_ACCESS_KEY", "\"" + getUnsplashAccess() + "\"")
+        buildConfigField("String", "BASE_URL", "\"https://unsplash.com/\"")
 
         javaCompileOptions {
             annotationProcessorOptions {
