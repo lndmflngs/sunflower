@@ -8,25 +8,25 @@ import androidx.annotation.MainThread
  */
 interface Target {
 
-    /**
-     * Called when the request starts.
-     */
-    @MainThread
-    fun onStart(placeholder: Drawable?) {
-    }
+	/**
+	 * Called when the request starts.
+	 */
+	@MainThread
+	fun onStart(placeholder: Drawable?) {
+	}
 
-    /**
-     * Called if the request completes successfully.
-     */
-    @MainThread
-    fun onSuccess(result: Drawable) {
-    }
+	/**
+	 * Called if the request completes successfully.
+	 */
+	@MainThread
+	fun onSuccess(result: Drawable) {
+	}
 
-    /**
-     * Called if an error occurs while executing the request.
-     */
-    @MainThread
-    fun onError(error: Drawable?) {
-    }
+	/**
+	 * Called if an error occurs while executing the request.
+	 */
+	@MainThread
+	fun onError(error: Drawable?) {
+	}
 
 }
