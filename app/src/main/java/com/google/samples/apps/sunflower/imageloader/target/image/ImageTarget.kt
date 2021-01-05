@@ -14,14 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower
+package com.google.samples.apps.sunflower.imageloader.target.image
 
-import com.google.samples.apps.sunflower.di.DatabaseToolsProvider
-import com.google.samples.apps.sunflower.di.ImageToolsProvider
-import com.google.samples.apps.sunflower.di.LaunchersToolsProvider
-import com.google.samples.apps.sunflower.di.NetworkToolsProvider
-import com.google.samples.apps.sunflower.di.PlantToolsProvider
-import com.google.samples.apps.sunflower.di.WrappersToolsProvider
+import android.graphics.drawable.Drawable
+import android.widget.ImageView
 
-interface SunflowerApplication : DatabaseToolsProvider, NetworkToolsProvider, PlantToolsProvider,
-	WrappersToolsProvider, LaunchersToolsProvider, ImageToolsProvider
+typealias GlideImageCustomTarget = com.bumptech.glide.request.target.CustomViewTarget<ImageView, Drawable>

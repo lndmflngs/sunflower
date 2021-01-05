@@ -14,11 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.validator
+package com.google.samples.apps.sunflower.feature
 
-object UnsplashKeyValidator : Validator<String> {
+import android.content.Context
+import com.google.samples.apps.sunflower.imageloader.GlideLoader
+import com.google.samples.apps.sunflower.imageloader.ImageLoader
 
-	override fun isValid(value: String): Boolean = with(value) {
-		return isNotEmpty() && this != "null"
-	}
+class ImageFeature(
+	private val context: Context,
+) : Feature {
+
+	val imageLoader: ImageLoader by lazy { GlideLoader(context) }
+
 }

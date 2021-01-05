@@ -18,6 +18,7 @@ package com.google.samples.apps.sunflower
 
 import android.app.Application
 import com.google.samples.apps.sunflower.feature.DatabaseFeature
+import com.google.samples.apps.sunflower.feature.ImageFeature
 import com.google.samples.apps.sunflower.feature.LaunchersFeature
 import com.google.samples.apps.sunflower.feature.PlantFeature
 import com.google.samples.apps.sunflower.feature.UnsplashFeature
@@ -36,5 +37,7 @@ class MainApplication : Application(), SunflowerApplication {
 	override val wrappersFeature by lazy { WrappersFeature(this) }
 
 	override val launchersFeature by lazy { LaunchersFeature(this) }
+
+	override val imageFeature by lazy { ImageFeature(this) }
 
 }
