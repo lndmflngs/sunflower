@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.imageloader.target.image
+package com.example.imageloader.target.image
 
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
 
-typealias GlideImageCustomTarget = com.bumptech.glide.request.target.CustomViewTarget<ImageView, Drawable>
+internal typealias GlideImageCustomTarget = com.bumptech.glide.request.target.CustomViewTarget<ImageView, Drawable>
+internal typealias GlideDrawableTarget = com.bumptech.glide.request.target.Target<Drawable>

@@ -1,4 +1,4 @@
-package com.google.samples.apps.sunflower.imageloader.target
+package com.example.imageloader.target
 
 import android.view.View
 

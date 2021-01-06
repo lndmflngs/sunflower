@@ -23,11 +23,11 @@ import android.widget.TextView
 import androidx.core.text.HtmlCompat
 import androidx.core.text.HtmlCompat.FROM_HTML_MODE_COMPACT
 import androidx.databinding.BindingAdapter
+import com.example.imageloader.ImageLoader
+import com.example.imageloader.request.RequestBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.extensions.sunflowerApplication
-import com.google.samples.apps.sunflower.imageloader.ImageLoader
-import com.google.samples.apps.sunflower.imageloader.request.RequestBuilder
 import com.google.samples.apps.sunflower.wrappers.ResourceReader
 
 private val View.imageLoader: ImageLoader

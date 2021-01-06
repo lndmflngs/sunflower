@@ -1,11 +1,11 @@
-package com.google.samples.apps.sunflower.imageloader.target
+package com.example.imageloader.target
 
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import com.bumptech.glide.request.transition.Transition
-import com.google.samples.apps.sunflower.imageloader.target.image.GlideImageCustomTarget
+import com.example.imageloader.target.image.GlideImageCustomTarget
 
-class GlideImageTarget(
+internal class GlideImageTarget(
 	override val targetView: ImageView,
 ) : GlideImageCustomTarget(targetView), ViewTarget<ImageView> {
 

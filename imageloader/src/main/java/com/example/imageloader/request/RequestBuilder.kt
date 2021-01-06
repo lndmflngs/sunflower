@@ -1,6 +1,6 @@
-package com.google.samples.apps.sunflower.imageloader.request
+package com.example.imageloader.request
 
-import com.google.samples.apps.sunflower.imageloader.options.ImageOptions
+import com.example.imageloader.options.ImageOptions
 
 class RequestBuilder() {
 

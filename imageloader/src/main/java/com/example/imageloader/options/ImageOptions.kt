@@ -1,4 +1,4 @@
-package com.google.samples.apps.sunflower.imageloader.options
+package com.example.imageloader.options
 
 class ImageOptions {
 

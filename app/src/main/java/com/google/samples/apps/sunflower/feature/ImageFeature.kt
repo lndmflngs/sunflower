@@ -17,8 +17,8 @@
 package com.google.samples.apps.sunflower.feature
 
 import android.content.Context
-import com.google.samples.apps.sunflower.imageloader.GlideLoader
-import com.google.samples.apps.sunflower.imageloader.ImageLoader
+import com.example.imageloader.GlideLoader
+import com.example.imageloader.ImageLoader
 
 class ImageFeature(
 	private val context: Context,
