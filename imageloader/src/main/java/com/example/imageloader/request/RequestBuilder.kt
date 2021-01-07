@@ -1,10 +1,13 @@
 package com.example.imageloader.request
 
 import com.example.imageloader.options.ImageOptions
+import com.example.imageloader.target.Target
 
 class RequestBuilder() {
 
 	private var imageOptions: ImageOptions? = null
+
+	private val imageCallback: MutableList<Target> = mutableListOf()
 
 	constructor(init: RequestBuilder.() -> Unit) : this() {
 		init()
@@ -18,8 +21,15 @@ class RequestBuilder() {
 		image { data = init }
 	}
 
+	fun addCallback(target: Target) {
+		imageCallback.add(target)
+	}
+
 	fun build(): Request {
-		return Request(checkNotNull(imageOptions))
+		return Request(
+			imageOptions = checkNotNull(imageOptions),
+			imageCallback = imageCallback.toTypedArray()
+		)
 	}
 
 }

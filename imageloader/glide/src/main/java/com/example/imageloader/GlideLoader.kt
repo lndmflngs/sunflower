@@ -38,13 +38,13 @@ class GlideLoader(context: Context) : ImageLoader {
 		loader.load(imageOptions.data)
 			.override(imageOptions.size)
 			.centerCrop()
-			.into(buildViewTarget(view))
+			.into(buildViewTarget(view, imageCallback))
 	}
 
 	@Suppress("UNCHECKED_CAST")
-	override fun <T : View> buildViewTarget(view: T): ViewTarget<T> {
+	override fun <T : View> buildViewTarget(view: T, callbacks: Array<Target>): ViewTarget<T> {
 		return when (view) {
-			is ImageView -> GlideImageTarget(view) as ViewTarget<T>
+			is ImageView -> GlideImageTarget(view, *callbacks) as ViewTarget<T>
 			else -> error("Unknown view for target: $view")
 		}
 	}

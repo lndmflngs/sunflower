@@ -16,7 +16,9 @@
 
 package com.google.samples.apps.sunflower.adapters.binding
 
+import android.graphics.drawable.Drawable
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -25,6 +27,7 @@ import androidx.core.text.HtmlCompat.FROM_HTML_MODE_COMPACT
 import androidx.databinding.BindingAdapter
 import com.example.imageloader.ImageLoader
 import com.example.imageloader.request.RequestBuilder
+import com.example.imageloader.target.Target
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.extensions.sunflowerApplication
@@ -38,13 +41,29 @@ private val View.resourceReader: ResourceReader
 
 @BindingAdapter("imageFromUrl")
 fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
+	// TODO: Remove Logger callback
 	if (! imageUrl.isNullOrEmpty()) {
 		val request = RequestBuilder {
 			image(imageUrl)
+			addCallback(object : Target {
+				override fun onError(error: Drawable?) {
+					super.onError(error)
+					Log.d("imageFromUrl", "error: $error")
+				}
+
+				override fun onStart(placeholder: Drawable?) {
+					super.onStart(placeholder)
+					Log.d("imageFromUrl", "onStart: $placeholder")
+				}
+
+				override fun onSuccess(result: Drawable) {
+					super.onSuccess(result)
+					Log.d("imageFromUrl", "onSuccess: $result")
+				}
+			})
 		}.build()
 
 		view.imageLoader.execute(request, view)
-//		TODO: transition(DrawableTransitionOptions.withCrossFade())
 	}
 }
 
