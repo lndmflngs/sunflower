@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.feature
+package com.example.core.fragment
 
-import android.content.Context
+import androidx.fragment.app.Fragment
+import com.example.core.activity.BaseActivity
 import com.example.core.feature.Feature
-import com.example.imageloader.GlideLoader
-import com.example.imageloader.ImageLoader
 
-class ImageFeature(
-	private val context: Context,
-) : Feature {
+open class BaseFragment : Fragment() {
 
-	val imageLoader: ImageLoader by lazy { GlideLoader(context) }
+	inline fun <reified T : Feature> getFeature(): T {
+		return (requireActivity() as BaseActivity).getFeature()
+	}
 }

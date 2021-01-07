@@ -17,8 +17,9 @@
 package com.google.samples.apps.sunflower.feature
 
 import android.content.Context
+import com.example.core.feature.Feature
+import com.example.core.validator.UrlValidator
 import com.google.samples.apps.sunflower.launcher.UnsplashLauncher
-import com.google.samples.apps.sunflower.validator.UrlValidator
 
 class LaunchersFeature(
 	private val context: Context,

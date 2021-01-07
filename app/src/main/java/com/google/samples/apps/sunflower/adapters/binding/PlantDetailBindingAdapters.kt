@@ -16,75 +16,15 @@
 
 package com.google.samples.apps.sunflower.adapters.binding
 
-import android.graphics.drawable.Drawable
-import android.text.method.LinkMovementMethod
-import android.util.Log
 import android.view.View
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.text.HtmlCompat
-import androidx.core.text.HtmlCompat.FROM_HTML_MODE_COMPACT
 import androidx.databinding.BindingAdapter
-import com.example.imageloader.ImageLoader
-import com.example.imageloader.request.RequestBuilder
-import com.example.imageloader.target.Target
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.core.wrappers.ResourceReader
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.extensions.sunflowerApplication
-import com.google.samples.apps.sunflower.wrappers.ResourceReader
-
-private val View.imageLoader: ImageLoader
-	get() = sunflowerApplication.imageFeature.imageLoader
 
 private val View.resourceReader: ResourceReader
 	get() = sunflowerApplication.wrappersFeature.resourceReader
-
-@BindingAdapter("imageFromUrl")
-fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
-	// TODO: Remove Logger callback
-	if (! imageUrl.isNullOrEmpty()) {
-		val request = RequestBuilder {
-			image(imageUrl)
-			addCallback(object : Target {
-				override fun onError(error: Drawable?) {
-					super.onError(error)
-					Log.d("imageFromUrl", "error: $error")
-				}
-
-				override fun onStart(placeholder: Drawable?) {
-					super.onStart(placeholder)
-					Log.d("imageFromUrl", "onStart: $placeholder")
-				}
-
-				override fun onSuccess(result: Drawable) {
-					super.onSuccess(result)
-					Log.d("imageFromUrl", "onSuccess: $result")
-				}
-			})
-		}.build()
-
-		view.imageLoader.execute(request, view)
-	}
-}
-
-@BindingAdapter("isFabGone")
-fun bindIsFabGone(view: FloatingActionButton, isGone: Boolean?) = with(view) {
-	if (isGone == null || isGone) {
-		hide()
-	} else {
-		show()
-	}
-}
-
-@BindingAdapter("renderHtml")
-fun bindRenderHtml(view: TextView, description: String?) = with(view) {
-	if (description != null) {
-		text = HtmlCompat.fromHtml(description, FROM_HTML_MODE_COMPACT)
-		movementMethod = LinkMovementMethod.getInstance()
-	} else {
-		text = ""
-	}
-}
 
 @BindingAdapter("wateringText")
 fun bindWateringText(textView: TextView, wateringInterval: Int) = with(textView) {

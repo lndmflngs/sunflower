@@ -21,12 +21,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
+import com.example.core.extensions.lazyViewModel
+import com.example.core.extensions.observe
+import com.example.core.fragment.BaseFragment
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.adapters.GardenPlantingAdapter
 import com.google.samples.apps.sunflower.adapters.pager.PLANT_LIST_PAGE_INDEX
 import com.google.samples.apps.sunflower.databinding.FragmentGardenBinding
-import com.google.samples.apps.sunflower.extensions.lazyViewModel
-import com.google.samples.apps.sunflower.extensions.observe
 import com.google.samples.apps.sunflower.extensions.sunflowerApplication
 import com.google.samples.apps.sunflower.viewmodels.GardenPlantingListViewModel
 

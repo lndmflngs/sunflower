@@ -20,11 +20,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.core.validator.Validator
+import com.example.core.wrappers.BuildConfigWrapper
 import com.google.samples.apps.sunflower.data.databse.repository.GardenPlantingRepository
 import com.google.samples.apps.sunflower.data.databse.repository.PlantRepository
 import com.google.samples.apps.sunflower.fragment.PlantDetailFragment
-import com.google.samples.apps.sunflower.validator.Validator
-import com.google.samples.apps.sunflower.wrappers.BuildConfigWrapper
 import kotlinx.coroutines.launch
 
 /**

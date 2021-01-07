@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.feature
+package com.example.core.launcher
 
 import android.content.Context
-import com.example.core.feature.Feature
-import com.example.imageloader.GlideLoader
-import com.example.imageloader.ImageLoader
+import android.content.Intent
+import com.example.core.launcher.args.LaunchArgs
 
-class ImageFeature(
-	private val context: Context,
-) : Feature {
+abstract class ContextLauncher<C : Context, T : LaunchArgs>(
+	protected val context: C,
+) : Launcher<T> {
 
-	val imageLoader: ImageLoader by lazy { GlideLoader(context) }
+	protected companion object {
+
+		val EMPTY_INTENT: Intent
+			get() = Intent()
+	}
+
 }

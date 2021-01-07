@@ -13,17 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.example.core.extensions
 
-package com.google.samples.apps.sunflower.feature
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 
-import android.content.Context
-import com.example.core.feature.Feature
-import com.example.imageloader.GlideLoader
-import com.example.imageloader.ImageLoader
+fun <T : Any> LiveData<T>.requireValue(): T = checkNotNull(value)
 
-class ImageFeature(
-	private val context: Context,
-) : Feature {
+fun <T> MutableLiveData<T>.onNext(next: T) {
+	value = next
+}
 
-	val imageLoader: ImageLoader by lazy { GlideLoader(context) }
+inline fun <T, LD : LiveData<T>> Fragment.observe(
+	liveData: LD,
+	crossinline block: (T) -> Unit,
+) {
+	liveData.observe(viewLifecycleOwner, Observer { block(it) })
 }

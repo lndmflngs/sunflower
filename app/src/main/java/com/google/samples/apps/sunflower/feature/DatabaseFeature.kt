@@ -17,6 +17,7 @@
 package com.google.samples.apps.sunflower.feature
 
 import android.content.Context
+import com.example.core.feature.Feature
 import com.google.samples.apps.sunflower.data.databse.AppDatabase
 import com.google.samples.apps.sunflower.data.databse.dao.GardenPlantingDao
 import com.google.samples.apps.sunflower.data.databse.dao.PlantDao

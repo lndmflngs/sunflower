@@ -23,11 +23,12 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import com.example.core.extensions.lazyViewModel
+import com.example.core.extensions.observe
+import com.example.core.fragment.BaseFragment
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.adapters.PlantAdapter
 import com.google.samples.apps.sunflower.databinding.FragmentPlantListBinding
-import com.google.samples.apps.sunflower.extensions.lazyViewModel
-import com.google.samples.apps.sunflower.extensions.observe
 import com.google.samples.apps.sunflower.feature.PlantFeature
 import com.google.samples.apps.sunflower.viewmodels.PlantListViewModel
 

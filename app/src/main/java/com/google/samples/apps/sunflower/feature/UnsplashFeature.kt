@@ -16,6 +16,7 @@
 
 package com.google.samples.apps.sunflower.feature
 
+import com.example.core.feature.Feature
 import com.google.samples.apps.sunflower.api.UnsplashService
 import com.google.samples.apps.sunflower.data.remote.repository.UnsplashRepository
 import okhttp3.Interceptor

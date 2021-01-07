@@ -23,9 +23,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.core.extensions.lazyViewModel
+import com.example.core.fragment.BaseFragment
 import com.google.samples.apps.sunflower.adapters.GalleryAdapter
 import com.google.samples.apps.sunflower.databinding.FragmentGalleryBinding
-import com.google.samples.apps.sunflower.extensions.lazyViewModel
 import com.google.samples.apps.sunflower.feature.LaunchersFeature
 import com.google.samples.apps.sunflower.feature.UnsplashFeature
 import com.google.samples.apps.sunflower.viewmodels.GalleryViewModel

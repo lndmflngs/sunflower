@@ -16,6 +16,8 @@
 
 package com.google.samples.apps.sunflower.validator
 
+import com.example.core.validator.Validator
+
 object UnsplashKeyValidator : Validator<String> {
 
 	override fun isValid(value: String): Boolean = with(value) {

@@ -19,8 +19,9 @@ package com.google.samples.apps.sunflower.launcher
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import com.example.core.launcher.ContextLauncher
+import com.example.core.validator.Validator
 import com.google.samples.apps.sunflower.launcher.args.UnsplashArgs
-import com.google.samples.apps.sunflower.validator.Validator
 
 class UnsplashLauncher(
 	context: Context,

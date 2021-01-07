@@ -16,6 +16,7 @@
 
 package com.google.samples.apps.sunflower.feature
 
+import com.example.core.feature.Feature
 import com.google.samples.apps.sunflower.data.databse.dao.GardenPlantingDao
 import com.google.samples.apps.sunflower.data.databse.dao.PlantDao
 import com.google.samples.apps.sunflower.data.databse.repository.GardenPlantingRepository

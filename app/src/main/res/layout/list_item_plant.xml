@@ -32,7 +32,7 @@
 				/>
 	</data>
 
-	<com.google.samples.apps.sunflower.views.MaskedCardView
+	<com.example.core.views.MaskedCardView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="@dimen/card_side_margin"
@@ -79,6 +79,6 @@
 
 		</androidx.constraintlayout.widget.ConstraintLayout>
 
-	</com.google.samples.apps.sunflower.views.MaskedCardView>
+	</com.example.core.views.MaskedCardView>
 
 </layout>

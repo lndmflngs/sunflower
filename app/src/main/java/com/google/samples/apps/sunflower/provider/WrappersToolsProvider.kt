@@ -14,16 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.feature
+package com.google.samples.apps.sunflower.provider
 
-import android.content.Context
-import com.example.core.feature.Feature
-import com.example.imageloader.GlideLoader
-import com.example.imageloader.ImageLoader
+import com.google.samples.apps.sunflower.feature.WrappersFeature
 
-class ImageFeature(
-	private val context: Context,
-) : Feature {
+interface WrappersToolsProvider {
 
-	val imageLoader: ImageLoader by lazy { GlideLoader(context) }
+	val wrappersFeature: WrappersFeature
 }

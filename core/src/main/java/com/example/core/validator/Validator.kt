@@ -14,16 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.feature
+package com.example.core.validator
 
-import android.content.Context
-import com.example.core.feature.Feature
-import com.example.imageloader.GlideLoader
-import com.example.imageloader.ImageLoader
+interface Validator<T : Any> {
 
-class ImageFeature(
-	private val context: Context,
-) : Feature {
-
-	val imageLoader: ImageLoader by lazy { GlideLoader(context) }
+	fun isValid(value: T): Boolean
 }

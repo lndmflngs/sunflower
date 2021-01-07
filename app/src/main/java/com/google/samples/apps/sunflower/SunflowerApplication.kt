@@ -16,12 +16,12 @@
 
 package com.google.samples.apps.sunflower
 
-import com.google.samples.apps.sunflower.di.DatabaseToolsProvider
-import com.google.samples.apps.sunflower.di.ImageToolsProvider
-import com.google.samples.apps.sunflower.di.LaunchersToolsProvider
-import com.google.samples.apps.sunflower.di.NetworkToolsProvider
-import com.google.samples.apps.sunflower.di.PlantToolsProvider
-import com.google.samples.apps.sunflower.di.WrappersToolsProvider
+import com.google.samples.apps.sunflower.provider.DatabaseToolsProvider
+import com.google.samples.apps.sunflower.provider.ImageToolsProvider
+import com.google.samples.apps.sunflower.provider.LaunchersToolsProvider
+import com.google.samples.apps.sunflower.provider.NetworkToolsProvider
+import com.google.samples.apps.sunflower.provider.PlantToolsProvider
+import com.google.samples.apps.sunflower.provider.WrappersToolsProvider
 
 interface SunflowerApplication : DatabaseToolsProvider, NetworkToolsProvider, PlantToolsProvider,
 	WrappersToolsProvider, LaunchersToolsProvider, ImageToolsProvider

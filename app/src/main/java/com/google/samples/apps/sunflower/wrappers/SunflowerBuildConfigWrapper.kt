@@ -14,20 +14,35 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.feature
+package com.google.samples.apps.sunflower.wrappers
 
-import android.content.Context
-import com.example.core.feature.Feature
 import com.example.core.wrappers.BuildConfigWrapper
-import com.example.core.wrappers.ResourceReader
-import com.google.samples.apps.sunflower.wrappers.AndroidResourceReader
-import com.google.samples.apps.sunflower.wrappers.SunflowerBuildConfigWrapper
+import com.google.samples.apps.sunflower.BuildConfig
 
-class WrappersFeature(
-	private val context: Context,
-) : Feature {
+class SunflowerBuildConfigWrapper : BuildConfigWrapper {
 
-	val resourceReader: ResourceReader by lazy { AndroidResourceReader(context) }
+	companion object {
 
-	val buildConfigWrapper: BuildConfigWrapper by lazy { SunflowerBuildConfigWrapper() }
+		const val NULL: String = "null"
+	}
+
+	override val unsplashAccessKey: String
+		get() {
+			val accessKey = BuildConfig.UNSPLASH_ACCESS_KEY
+			if (accessKey == NULL) {
+				return ""
+			}
+
+			return accessKey
+		}
+
+	override val unsplashBaseUrl: String
+		get() = BuildConfig.BASE_URL
+
+	override val isDebug: Boolean
+		get() = BuildConfig.BUILD_TYPE == "debug"
+
+	override val isDev: Boolean
+		get() = BuildConfig.FLAVOR == "dev"
+
 }

@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.feature
+package com.example.core.wrappers
 
 import android.content.Context
-import com.example.core.feature.Feature
-import com.example.imageloader.GlideLoader
-import com.example.imageloader.ImageLoader
+import java.util.*
 
-class ImageFeature(
-	private val context: Context,
-) : Feature {
+interface LocaleManager {
 
-	val imageLoader: ImageLoader by lazy { GlideLoader(context) }
+	val currentLocale: Locale
+
+	fun createLocaleContext(context: Context, locale: Locale): Context
 }
+

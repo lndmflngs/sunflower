@@ -16,4 +16,6 @@
 
 package com.google.samples.apps.sunflower.launcher.args
 
+import com.example.core.launcher.args.LaunchArgs
+
 class UnsplashArgs(val photoUrl: String) : LaunchArgs

@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.feature
+package com.example.core.wrappers
 
-import android.content.Context
-import com.example.core.feature.Feature
-import com.example.imageloader.GlideLoader
-import com.example.imageloader.ImageLoader
+interface BuildConfigWrapper {
 
-class ImageFeature(
-	private val context: Context,
-) : Feature {
+	val unsplashBaseUrl: String
 
-	val imageLoader: ImageLoader by lazy { GlideLoader(context) }
+	val unsplashAccessKey: String
+
+	val isDebug: Boolean
+
+	val isDev: Boolean
+
 }

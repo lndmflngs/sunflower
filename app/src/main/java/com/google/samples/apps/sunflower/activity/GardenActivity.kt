@@ -18,6 +18,7 @@ package com.google.samples.apps.sunflower.activity
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil.setContentView
+import com.example.core.activity.BaseActivity
 import com.google.samples.apps.sunflower.R.layout
 import com.google.samples.apps.sunflower.databinding.ActivityGardenBinding
 
