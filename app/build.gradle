@@ -13,13 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
 }
+
+def secretProperties = readSecretProperties(rootProject)
+checkProperty(secretProperties, "unsplash_access_key")
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -40,8 +42,8 @@ android {
         vectorDrawables.useSupportLibrary true
 
         // Consult the README on instructions for setting up Unsplash API key
-        buildConfigField("String", "UNSPLASH_ACCESS_KEY", "\"" + getUnsplashAccess() + "\"")
-        buildConfigField("String", "BASE_URL", "\"https://unsplash.com/\"")
+        buildConfigField("String", "UNSPLASH_ACCESS_KEY", getProperty(secretProperties, "unsplash_access_key"))
+        buildConfigField("String", "BASE_URL", wrapConfigValue("https://unsplash.com/"))
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -154,6 +156,30 @@ dependencies {
     testImplementation "junit:junit:$rootProject.junitVersion"
 }
 
-def getUnsplashAccess() {
-    return project.findProperty("unsplash_access_key")
+static def readSecretProperties(Project project) {
+    def properties = new Properties()
+
+    def secretsPropertiesFile = project.file("secret.properties")
+    if (secretsPropertiesFile.exists()) {
+        properties.load(new FileInputStream(secretsPropertiesFile))
+    }
+
+    return properties
+}
+
+static def checkProperty(Properties properties, String property) {
+    if (!properties.containsKey(property)) {
+        throw new GradleScriptException(
+                property + " is null",
+                new Throwable(property + "in not found in secret.properties")
+        )
+    }
+}
+
+static def getProperty(Properties properties, String key) {
+    wrapConfigValue(properties.getProperty(key))
+}
+
+static def wrapConfigValue(String value) {
+    return "\"" + value + "\""
 }
