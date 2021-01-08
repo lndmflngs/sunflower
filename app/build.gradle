@@ -177,7 +177,7 @@ static def checkProperty(Properties properties, String property) {
 }
 
 static def getProperty(Properties properties, String key) {
-    wrapConfigValue(properties.getProperty(key))
+    return properties.getProperty(key)
 }
 
 static def wrapConfigValue(String value) {

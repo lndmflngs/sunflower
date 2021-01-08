@@ -19,7 +19,6 @@ package com.example.core.fragment
 import android.app.Application
 import androidx.fragment.app.Fragment
 import com.example.core.extensions.getFeature
-import com.example.core.extensions.releaseAllFeatures
 import com.example.core.extensions.releaseFeature
 import com.example.core.feature.Feature
 import com.example.core.feature.ReleasableFeature
@@ -36,9 +35,4 @@ open class BaseFragment : Fragment() {
 	protected inline fun <reified T : ReleasableFeature> releaseFeature() {
 		application.releaseFeature<T>()
 	}
-
-	protected fun releaseAllFeatures() {
-		application.releaseAllFeatures()
-	}
-
 }

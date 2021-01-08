@@ -14,22 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.core.activity
+package com.example.core.lazy
 
-import android.app.Activity
-import com.example.core.extensions.getFeature
-import com.example.core.extensions.releaseFeature
-import com.example.core.feature.Feature
-import com.example.core.feature.ReleasableFeature
+internal const val LAZY_NOT_INIT_MESSAGE = "Lazy value not initialized yet."
 
-open class BaseActivity : Activity() {
+interface MutableLazy<T> : Lazy<T> {
 
-	inline fun <reified T : Feature> getFeature(): T {
-		return application.getFeature()
-	}
+	override val value: T
 
-	protected inline fun <reified T : ReleasableFeature> releaseFeature() {
-		application.releaseFeature<T>()
-	}
-
+	fun setUninitialized()
 }

@@ -14,22 +14,6 @@
  * limitations under the License.
  */
 
-package com.example.core.activity
+package com.example.core.lazy
 
-import android.app.Activity
-import com.example.core.extensions.getFeature
-import com.example.core.extensions.releaseFeature
-import com.example.core.feature.Feature
-import com.example.core.feature.ReleasableFeature
-
-open class BaseActivity : Activity() {
-
-	inline fun <reified T : Feature> getFeature(): T {
-		return application.getFeature()
-	}
-
-	protected inline fun <reified T : ReleasableFeature> releaseFeature() {
-		application.releaseFeature<T>()
-	}
-
-}
+internal object UNINITIALIZED_VALUE

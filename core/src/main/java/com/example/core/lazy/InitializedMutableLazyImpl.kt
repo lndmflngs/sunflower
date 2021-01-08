@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-package com.example.core.activity
+package com.example.core.lazy
 
-import android.app.Activity
-import com.example.core.extensions.getFeature
-import com.example.core.extensions.releaseFeature
-import com.example.core.feature.Feature
-import com.example.core.feature.ReleasableFeature
+internal class InitializedMutableLazyImpl<T>(
+	override val value: T,
+) : MutableLazy<T> {
 
-open class BaseActivity : Activity() {
+	override fun isInitialized(): Boolean = true
 
-	inline fun <reified T : Feature> getFeature(): T {
-		return application.getFeature()
-	}
+	override fun toString(): String = value.toString()
 
-	protected inline fun <reified T : ReleasableFeature> releaseFeature() {
-		application.releaseFeature<T>()
-	}
+	override fun setUninitialized() = Unit
 
 }

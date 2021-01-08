@@ -1,3 +1,4 @@
+@file:Suppress("UNCHECKED_CAST")
 /*
  * Copyright 2021 Google LLC
  *
@@ -19,34 +20,29 @@ package com.example.core.extensions
 import android.app.Application
 import com.example.core.feature.Feature
 import com.example.core.feature.ReleasableFeature
-import kotlin.reflect.KMutableProperty
+import com.example.core.lazy.MutableLazy
 import kotlin.reflect.KProperty1
 import kotlin.reflect.full.declaredMemberProperties
+import kotlin.reflect.jvm.isAccessible
 import kotlin.reflect.jvm.javaType
 
-val Application.declaredMemberProperties: Collection<KProperty1<out Application, *>>
-	get() = this::class.declaredMemberProperties
-
-inline fun <reified T : Feature> Application.getFeature(): T {
-	val features = declaredMemberProperties
+inline fun <reified T : Feature> Application.getProperty(): KProperty1<Application, T> {
+	val features = this::class.declaredMemberProperties
 		.map { it.returnType.javaType to it }
 		.toMap()
 
-	return (features[T::class.javaObjectType] as KProperty1<Any, *>).get(this) as T
+	return features[T::class.javaObjectType] as KProperty1<Application, T>
 }
 
-inline fun <reified T : ReleasableFeature> Application.releaseFeature() {
-	val features = declaredMemberProperties
-		.filterIsInstance(T::class.java)
-		.filterIsInstance(KMutableProperty::class.java)
-
-	features.forEach { it.setter.call(this, null) }
+inline fun <reified T : Feature> Application.getFeature(): T {
+	return getProperty<T>().get(this)
 }
 
-fun Application.releaseAllFeatures() {
-	val features = declaredMemberProperties
-		.filterIsInstance(ReleasableFeature::class.java)
-		.filterIsInstance(KMutableProperty::class.java)
+inline fun <reified T : ReleasableFeature> Application.releaseFeature() = with(getProperty<T>()){
+	isAccessible = true
 
-	features.forEach { it.setter.call(this, null) }
+	val delegate = getDelegate(this@releaseFeature) as MutableLazy<T>
+	delegate.setUninitialized()
+
+	isAccessible = false
 }
