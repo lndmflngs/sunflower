@@ -17,17 +17,24 @@
 package com.example.core.activity
 
 import android.app.Activity
+import com.example.core.extensions.getFeature
+import com.example.core.extensions.releaseAllFeatures
+import com.example.core.extensions.releaseFeature
 import com.example.core.feature.Feature
-import kotlin.reflect.KProperty1
-import kotlin.reflect.full.declaredMemberProperties
-import kotlin.reflect.jvm.javaType
+import com.example.core.feature.ReleasableFeature
 
 open class BaseActivity : Activity() {
 
 	inline fun <reified T : Feature> getFeature(): T {
-		val declaredMemberProperties = application::class::declaredMemberProperties
-		val features = declaredMemberProperties.get().map { it.returnType.javaType to it }.toMap()
-		return (features[T::class.javaObjectType] as KProperty1<Any, *>).get(application) as T
+		return application.getFeature()
+	}
+
+	protected inline fun <reified T : ReleasableFeature> releaseFeature() {
+		application.releaseFeature<T>()
+	}
+
+	protected fun releaseAllFeatures() {
+		application.releaseAllFeatures()
 	}
 
 }

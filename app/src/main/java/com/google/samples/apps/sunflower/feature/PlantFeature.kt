@@ -16,7 +16,7 @@
 
 package com.google.samples.apps.sunflower.feature
 
-import com.example.core.feature.Feature
+import com.example.core.feature.ReleasableFeature
 import com.google.samples.apps.sunflower.data.databse.dao.GardenPlantingDao
 import com.google.samples.apps.sunflower.data.databse.dao.PlantDao
 import com.google.samples.apps.sunflower.data.databse.repository.GardenPlantingRepository
@@ -25,7 +25,7 @@ import com.google.samples.apps.sunflower.data.databse.repository.PlantRepository
 class PlantFeature(
 	private val plantDao: PlantDao,
 	private val gardenPlantingDao: GardenPlantingDao,
-) : Feature {
+) : ReleasableFeature {
 
 	companion object {
 

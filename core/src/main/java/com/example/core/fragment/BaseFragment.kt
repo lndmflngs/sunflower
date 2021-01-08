@@ -16,13 +16,29 @@
 
 package com.example.core.fragment
 
+import android.app.Application
 import androidx.fragment.app.Fragment
-import com.example.core.activity.BaseActivity
+import com.example.core.extensions.getFeature
+import com.example.core.extensions.releaseAllFeatures
+import com.example.core.extensions.releaseFeature
 import com.example.core.feature.Feature
+import com.example.core.feature.ReleasableFeature
 
 open class BaseFragment : Fragment() {
 
-	inline fun <reified T : Feature> getFeature(): T {
-		return (requireActivity() as BaseActivity).getFeature()
+	protected val application: Application
+		get() = requireContext().applicationContext as Application
+
+	protected inline fun <reified T : Feature> getFeature(): T {
+		return application.getFeature()
 	}
+
+	protected inline fun <reified T : ReleasableFeature> releaseFeature() {
+		application.releaseFeature<T>()
+	}
+
+	protected fun releaseAllFeatures() {
+		application.releaseAllFeatures()
+	}
+
 }

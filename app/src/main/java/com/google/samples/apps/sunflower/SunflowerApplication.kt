@@ -23,5 +23,5 @@ import com.google.samples.apps.sunflower.provider.NetworkToolsProvider
 import com.google.samples.apps.sunflower.provider.PlantToolsProvider
 import com.google.samples.apps.sunflower.provider.WrappersToolsProvider
 
-interface SunflowerApplication : DatabaseToolsProvider, NetworkToolsProvider, PlantToolsProvider,
-	WrappersToolsProvider, LaunchersToolsProvider, ImageToolsProvider
+interface SunflowerApplication : DatabaseToolsProvider, NetworkToolsProvider,
+	PlantToolsProvider, WrappersToolsProvider, LaunchersToolsProvider, ImageToolsProvider

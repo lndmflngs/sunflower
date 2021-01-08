@@ -14,15 +14,6 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.activity
+package com.example.core.feature
 
-import android.os.Bundle
-import com.example.core.activity.BaseActivity
-
-class GardenActivity : BaseActivity() {
-
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-//		setContentView<ActivityGardenBinding>(this, layout.activity_garden)
-	}
-}
+interface ReleasableFeature : Feature
