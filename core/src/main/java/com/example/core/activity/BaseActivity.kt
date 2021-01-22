@@ -21,8 +21,9 @@ import com.example.core.extensions.getFeature
 import com.example.core.extensions.releaseFeature
 import com.example.core.feature.Feature
 import com.example.core.feature.ReleasableFeature
+import kotlin.reflect.KClass
 
-open class BaseActivity : Activity() {
+open class BaseActivity : Activity(), FeatureProvider {
 
 	inline fun <reified T : Feature> getFeature(): T {
 		return application.getFeature()
@@ -30,6 +31,14 @@ open class BaseActivity : Activity() {
 
 	protected inline fun <reified T : ReleasableFeature> releaseFeature() {
 		application.releaseFeature<T>()
+	}
+
+	override fun <T : Feature> getFeature(kclass: KClass<T>): T {
+		TODO("Not yet implemented")
+	}
+
+	override fun <T : Feature> releaseFeature(kclass: KClass<T>) {
+		TODO("Not yet implemented")
 	}
 
 }

@@ -14,16 +14,27 @@
  * limitations under the License.
  */
 
-package com.example.core.lazy
+package com.example.core.releasable
 
-internal class InitializedMutableLazyImpl<T>(
-	override val value: T,
-) : MutableLazy<T> {
+import com.example.core.feature.Releasable
+import kotlin.properties.ReadOnlyProperty
+import kotlin.reflect.KProperty
 
-	override fun isInitialized(): Boolean = true
+class UnsafeReleasableLazy<T : Any>(
+	private val initializer: () -> T,
+) : ReadOnlyProperty<Any?, T>, Releasable {
 
-	override fun toString(): String = value.toString()
+	private var releasableValue: T? = initializer()
 
-	override fun setUninitialized() = Unit
+	override fun getValue(thisRef: Any?, property: KProperty<*>): T {
+		if (releasableValue == null) {
+			releasableValue = initializer()
+		}
+		return releasableValue as T
+	}
+
+	override fun release() {
+		releasableValue = null
+	}
 
 }

@@ -16,7 +16,8 @@
 
 package com.google.samples.apps.sunflower.feature
 
-import com.example.core.feature.Feature
+import com.example.core.feature.ReleasableFeature
+import com.example.core.releasable.releasableLazy
 import com.google.samples.apps.sunflower.api.UnsplashService
 import com.google.samples.apps.sunflower.data.remote.repository.UnsplashRepository
 import okhttp3.Interceptor
@@ -25,9 +26,9 @@ import okhttp3.logging.HttpLoggingInterceptor.Level.BASIC
 import retrofit2.Converter
 import retrofit2.converter.gson.GsonConverterFactory
 
-class UnsplashFeature : Feature {
+class UnsplashFeature : ReleasableFeature {
 
-	val unsplashRepository by lazy { UnsplashRepository(unsplashService) }
+	val unsplashRepository by releasableLazy { UnsplashRepository(unsplashService) }
 
 	private val loggingInterceptor: Interceptor by lazy {
 		HttpLoggingInterceptor().apply { level = BASIC }

@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.core.lazy
+package com.example.core.feature
 
-internal object UNINITIALIZED_VALUE
+interface Releasable {
+
+	fun release()
+}

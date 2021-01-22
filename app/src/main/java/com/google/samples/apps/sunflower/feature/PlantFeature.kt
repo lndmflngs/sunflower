@@ -17,6 +17,7 @@
 package com.google.samples.apps.sunflower.feature
 
 import com.example.core.feature.ReleasableFeature
+import com.example.core.releasable.releasableLazy
 import com.google.samples.apps.sunflower.data.databse.dao.GardenPlantingDao
 import com.google.samples.apps.sunflower.data.databse.dao.PlantDao
 import com.google.samples.apps.sunflower.data.databse.repository.GardenPlantingRepository
@@ -32,7 +33,8 @@ class PlantFeature(
 		const val PLANT_DATA_FILENAME = "plants.json"
 	}
 
-	val plantRepository by lazy { PlantRepository(plantDao) }
+	val plantRepository by releasableLazy { PlantRepository(plantDao) }
 
-	val gardenPlantingRepository by lazy { GardenPlantingRepository(gardenPlantingDao) }
+	val gardenPlantingRepository by releasableLazy { GardenPlantingRepository(gardenPlantingDao) }
+
 }

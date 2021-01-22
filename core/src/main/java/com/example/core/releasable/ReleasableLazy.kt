@@ -14,13 +14,21 @@
  * limitations under the License.
  */
 
-package com.example.core.lazy
+package com.example.core.releasable
 
-internal const val LAZY_NOT_INIT_MESSAGE = "Lazy value not initialized yet."
+import kotlin.properties.ReadOnlyProperty
 
-interface MutableLazy<T> : Lazy<T> {
+fun <T : Any> releasableLazy(initializer: () -> T): ReadOnlyProperty<Any?, T> {
+	return SynchronizedReleasableLazy(initializer)
+}
 
-	override val value: T
-
-	fun setUninitialized()
+fun <T : Any> releasableLazy(
+	mode: LazyThreadSafetyMode,
+	initializer: () -> T,
+): ReadOnlyProperty<Any?, T> {
+	return when (mode) {
+		LazyThreadSafetyMode.SYNCHRONIZED -> SynchronizedReleasableLazy(initializer)
+		LazyThreadSafetyMode.NONE -> UnsafeReleasableLazy(initializer)
+		else -> error("Unknown mode: $mode")
+	}
 }
