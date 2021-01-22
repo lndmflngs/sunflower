@@ -64,6 +64,11 @@ class GalleryFragment : BaseFragment() {
 		return binding.root
 	}
 
+	override fun onDestroy() {
+		super.onDestroy()
+		releaseFeature<UnsplashFeature>()
+	}
+
 	private fun initToolbar(binding: FragmentGalleryBinding) = with(binding) {
 		toolbar.setNavigationOnClickListener { view ->
 			view.findNavController().navigateUp()

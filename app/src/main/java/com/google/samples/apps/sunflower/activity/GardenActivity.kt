@@ -18,6 +18,7 @@ package com.google.samples.apps.sunflower.activity
 
 import android.os.Bundle
 import com.example.core.activity.BaseActivity
+import com.google.samples.apps.sunflower.feature.PlantFeature
 
 class GardenActivity : BaseActivity() {
 
@@ -25,4 +26,10 @@ class GardenActivity : BaseActivity() {
 		super.onCreate(savedInstanceState)
 //		setContentView<ActivityGardenBinding>(this, layout.activity_garden)
 	}
+
+	override fun onDestroy() {
+		super.onDestroy()
+		releaseFeature<PlantFeature>()
+	}
+
 }
