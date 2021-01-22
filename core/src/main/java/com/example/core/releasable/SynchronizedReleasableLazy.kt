@@ -16,7 +16,6 @@
 
 package com.example.core.releasable
 
-import android.util.Log
 import com.example.core.feature.Releasable
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty

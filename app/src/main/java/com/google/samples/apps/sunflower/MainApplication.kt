@@ -24,7 +24,7 @@ import com.google.samples.apps.sunflower.feature.PlantFeature
 import com.google.samples.apps.sunflower.feature.UnsplashFeature
 import com.google.samples.apps.sunflower.feature.WrappersFeature
 
-class MainApplication() : Application(), SunflowerApplication {
+class MainApplication : Application(), SunflowerApplication {
 
 	override val databaseFeature by lazy { DatabaseFeature(this) }
 
