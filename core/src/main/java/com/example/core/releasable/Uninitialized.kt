@@ -14,23 +14,6 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.activity
+package com.example.core.releasable
 
-import android.os.Bundle
-import com.example.core.activity.BaseActivity
-import com.google.samples.apps.sunflower.R
-import com.google.samples.apps.sunflower.feature.PlantFeature
-
-class GardenActivity : BaseActivity() {
-
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_garden)
-	}
-
-	override fun onDestroy() {
-		super.onDestroy()
-		releaseFeature<PlantFeature>()
-	}
-
-}
+internal object UNINITIALIZED_VALUE

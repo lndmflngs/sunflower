@@ -23,7 +23,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.text.HtmlCompat
-import androidx.databinding.BindingAdapter
 import com.example.imageloader.ImageLoader
 import com.example.imageloader.request.RequestBuilder
 import com.example.imageloader.target.Target
@@ -33,8 +32,7 @@ import com.google.samples.apps.sunflower.extensions.sunflowerApplication
 private val View.imageLoader: ImageLoader
 	get() = sunflowerApplication.imageFeature.imageLoader
 
-@BindingAdapter("isGone")
-fun bindIsGone(view: View, isGone: Boolean) = with(view) {
+fun View.bindIsGone(isGone: Boolean) = with(this) {
 	visibility = if (isGone) {
 		View.GONE
 	} else {
@@ -42,8 +40,7 @@ fun bindIsGone(view: View, isGone: Boolean) = with(view) {
 	}
 }
 
-@BindingAdapter("imageFromUrl")
-fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
+fun ImageView.bindImageFromUrl(imageUrl: String?) {
 	// TODO: Remove Logger callback
 	if (! imageUrl.isNullOrEmpty()) {
 		val request = RequestBuilder {
@@ -66,12 +63,11 @@ fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
 			})
 		}.build()
 
-		view.imageLoader.execute(request, view)
+		imageLoader.execute(request, this)
 	}
 }
 
-@BindingAdapter("isFabGone")
-fun bindIsFabGone(view: FloatingActionButton, isGone: Boolean?) = with(view) {
+fun FloatingActionButton.bindIsFabGone(isGone: Boolean?) = with(this) {
 	if (isGone == null || isGone) {
 		hide()
 	} else {
@@ -79,8 +75,7 @@ fun bindIsFabGone(view: FloatingActionButton, isGone: Boolean?) = with(view) {
 	}
 }
 
-@BindingAdapter("renderHtml")
-fun bindRenderHtml(view: TextView, description: String?) = with(view) {
+fun TextView.bindRenderHtml(description: String?) = with(this) {
 	if (description != null) {
 		text = HtmlCompat.fromHtml(description, HtmlCompat.FROM_HTML_MODE_COMPACT)
 		movementMethod = LinkMovementMethod.getInstance()

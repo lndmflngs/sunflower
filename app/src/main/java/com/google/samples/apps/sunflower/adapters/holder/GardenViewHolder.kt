@@ -22,7 +22,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.samples.apps.sunflower.data.databse.PlantAndGardenPlantings
 import com.google.samples.apps.sunflower.databinding.ListItemGardenPlantingBinding
 import com.google.samples.apps.sunflower.fragment.HomeViewPagerFragmentDirections.Companion.actionViewPagerFragmentToPlantDetailFragment
-import com.google.samples.apps.sunflower.viewmodels.PlantAndGardenPlantingsViewModel
 
 internal class GardenViewHolder(
 	private val binding: ListItemGardenPlantingBinding,

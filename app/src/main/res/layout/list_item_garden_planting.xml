@@ -19,26 +19,12 @@
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		>
 
-	<data>
-
-		<variable
-				name="clickListener"
-				type="android.view.View.OnClickListener"
-				/>
-
-		<variable
-				name="viewModel"
-				type="com.google.samples.apps.sunflower.viewmodels.PlantAndGardenPlantingsViewModel"
-				/>
-	</data>
-
 	<com.example.core.views.MaskedCardView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="@dimen/card_side_margin"
 			android:layout_marginEnd="@dimen/card_side_margin"
 			android:layout_marginBottom="@dimen/card_bottom_margin"
-			android:onClick="@{clickListener}"
 			app:cardElevation="@dimen/card_elevation"
 			app:cardPreventCornerOverlap="false"
 			app:shapeAppearanceOverlay="@style/ShapeAppearance.Sunflower.Card"
@@ -55,7 +41,6 @@
 					android:layout_height="@dimen/plant_item_image_height"
 					android:contentDescription="@string/a11y_plant_item_image"
 					android:scaleType="centerCrop"
-					app:imageFromUrl="@{viewModel.imageUrl}"
 					app:layout_constraintEnd_toEndOf="parent"
 					app:layout_constraintStart_toStartOf="parent"
 					app:layout_constraintTop_toTopOf="parent"
@@ -67,7 +52,6 @@
 					android:layout_height="wrap_content"
 					android:layout_marginTop="@dimen/margin_normal"
 					android:gravity="center_horizontal"
-					android:text="@{viewModel.plantName}"
 					android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
 					app:layout_constraintEnd_toEndOf="parent"
 					app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +79,6 @@
 					android:layout_height="wrap_content"
 					android:layout_marginTop="0dp"
 					android:gravity="center_horizontal"
-					android:text="@{viewModel.plantDateString}"
 					android:textAppearance="?attr/textAppearanceSubtitle2"
 					app:layout_constraintEnd_toEndOf="parent"
 					app:layout_constraintStart_toStartOf="parent"
@@ -123,7 +106,6 @@
 					android:layout_height="wrap_content"
 					android:layout_marginTop="0dp"
 					android:gravity="center_horizontal"
-					android:text="@{viewModel.waterDateString}"
 					android:textAppearance="?attr/textAppearanceSubtitle2"
 					app:layout_constraintEnd_toEndOf="parent"
 					app:layout_constraintStart_toStartOf="parent"
@@ -137,7 +119,6 @@
 					android:layout_marginTop="0dp"
 					android:layout_marginBottom="@dimen/margin_normal"
 					android:gravity="center_horizontal"
-					android:text="@{@plurals/watering_next(viewModel.wateringInterval, viewModel.wateringInterval)}"
 					android:textAppearance="?attr/textAppearanceSubtitle2"
 					app:layout_constraintBottom_toBottomOf="parent"
 					app:layout_constraintEnd_toEndOf="parent"

@@ -1,18 +1,4 @@
-/*
- * Copyright 2021 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+@file:Suppress("UNCHECKED_CAST")
 
 package com.example.core.releasable
 
@@ -25,19 +11,42 @@ class SynchronizedReleasableLazy<T : Any>(
 ) : ReadOnlyProperty<Any?, T>, Releasable {
 
 	@Volatile
-	private var releasableValue: T? = initializer()
+	private var releasableValue: Any? = UNINITIALIZED_VALUE
 
-	@Synchronized
 	override fun getValue(thisRef: Any?, property: KProperty<*>): T {
-		if (releasableValue === null) {
-			releasableValue = initializer()
+		val _v1 = releasableValue
+		if (_v1 !== UNINITIALIZED_VALUE) {
+			return _v1 as T
 		}
-		return releasableValue as T
+
+		return safeGetValue()
 	}
 
-	@Synchronized
+	private fun safeGetValue(): T = synchronized(this) {
+		val _v2 = releasableValue
+		return if (_v2 !== UNINITIALIZED_VALUE) {
+			_v2 as T
+		} else {
+			val typedValue = initializer()
+			releasableValue = typedValue
+			typedValue
+		}
+	}
+
 	override fun release() {
-		releasableValue = null
+		val _v1 = releasableValue
+		if (_v1 === UNINITIALIZED_VALUE) {
+			return
+		}
+
+		synchronized(this) {
+			val _v2 = releasableValue
+			if (_v2 === UNINITIALIZED_VALUE) {
+				return
+			} else {
+				releasableValue = UNINITIALIZED_VALUE
+			}
+		}
 	}
 
 }

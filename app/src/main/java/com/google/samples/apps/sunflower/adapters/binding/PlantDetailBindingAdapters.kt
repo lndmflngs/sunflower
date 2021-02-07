@@ -18,7 +18,6 @@ package com.google.samples.apps.sunflower.adapters.binding
 
 import android.view.View
 import android.widget.TextView
-import androidx.databinding.BindingAdapter
 import com.example.core.wrappers.ResourceReader
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.extensions.sunflowerApplication
@@ -26,8 +25,7 @@ import com.google.samples.apps.sunflower.extensions.sunflowerApplication
 private val View.resourceReader: ResourceReader
 	get() = sunflowerApplication.wrappersFeature.resourceReader
 
-@BindingAdapter("wateringText")
-fun bindWateringText(textView: TextView, wateringInterval: Int) = with(textView) {
+fun TextView.bindWateringText(wateringInterval: Int) = with(this) {
 	val quantityString = resourceReader.quantityString(
 		R.plurals.watering_needs_suffix,
 		wateringInterval,

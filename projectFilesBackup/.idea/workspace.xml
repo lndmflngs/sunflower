@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:nb" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:ts" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:upstream" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:upstream" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:nb" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:upstream" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:ts" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c2265a28-b05d-4fd7-91f6-bf0773569bc6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/google/samples/apps/sunflower/activity/GardenActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/google/samples/apps/sunflower/activity/GardenActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/google/samples/apps/sunflower/adapters/binding/PlantDetailBindingAdapters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/google/samples/apps/sunflower/adapters/binding/PlantDetailBindingAdapters.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/google/samples/apps/sunflower/adapters/binding/ViewAdapters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/google/samples/apps/sunflower/adapters/binding/ViewAdapters.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/google/samples/apps/sunflower/adapters/holder/GardenViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/google/samples/apps/sunflower/adapters/holder/GardenViewHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/google/samples/apps/sunflower/fragment/GalleryFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/google/samples/apps/sunflower/fragment/GalleryFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/google/samples/apps/sunflower/fragment/PlantDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/google/samples/apps/sunflower/fragment/PlantDetailFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_garden.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_garden.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_plant_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_plant_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_garden_planting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_garden_planting.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_photo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_photo.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_plant.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_plant.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sunflower" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Interface" />
+        <option value="layoutResourceFile" />
+        <option value="Class" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="36ec88cf8131922a8dd01a1e2b0d4708b0fda4b0" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KotlinCodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="KotlinMultiplatform">
+    <allAvailableExecutables />
+  </component>
+  <component name="ProjectId" id="1lsce4unVn79kADgZjn9OuhTMtK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="android-custom-viewC:/Users/ishu/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.3.0-rc01/d3e303766b5694fb0c1b07cc5bb1105bb7da6825/fragment-1.3.0-rc01-sources.jar!/androidx/fragment/app/FragmentContainerView.java_SELECTED" value="FragmentContainerView" />
+    <property name="android-custom-viewC:/Users/ishu/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_SELECTED" value="View" />
+    <property name="android-custom-viewC:/Users/ishu/Downloads/Repos/sunflower/app/src/main/java/com/google/samples/apps/sunflower/views/MaskedCardView.kt_SELECTED" value="MaskedCardView" />
+    <property name="android-custom-viewC:/Users/ishu/Downloads/Repos/sunflower/core/src/main/java/com/example/core/views/MaskedCardView.kt_SELECTED" value="MaskedCardView" />
+    <property name="android-custom-viewC:/Users/ishu/Downloads/Repos/sunflower/core/src/test/java/com/example/core/views/MaskedCardView.kt_SELECTED" value="MaskedCardView" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/test" />
+    <property name="multi-representation-previewC:/Users/ishu/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.3.0-rc01/d3e303766b5694fb0c1b07cc5bb1105bb7da6825/fragment-1.3.0-rc01-sources.jar!/androidx/fragment/app/FragmentContainerView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/ishu/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/ishu/Downloads/Repos/sunflower/app/src/main/java/com/google/samples/apps/sunflower/views/MaskedCardView.kt_selected" value="" />
+    <property name="multi-representation-previewC:/Users/ishu/Downloads/Repos/sunflower/core/src/main/java/com/example/core/views/MaskedCardView.kt_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/ishu/Downloads/Repos/sunflower/core/src/test/java/com/example/core/views/MaskedCardView.kt_selected" value="Custom views" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Kotlin" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ishu\Downloads\Repos\sunflower\imageloader\src\main\java\com\example\imageloader" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.example.core.feature" />
+      <recent name="com.example.imageloader.target" />
+      <recent name="com.google.samples.apps.sunflower.di" />
+      <recent name="com.google.samples.apps.sunflower.feature" />
+      <recent name="com.google.samples.apps.sunflower.validator" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.core.delegate" />
+      <recent name="com.google.samples.apps.sunflower.launcher.args" />
+      <recent name="com.google.samples.apps.sunflower.di" />
+      <recent name="com.google.samples.apps.sunflower.data.remote.model" />
+      <recent name="com.google.samples.apps.sunflower.data.remote.repository" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.google.samples.apps.sunflower" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ishu\Downloads\Repos\sunflower\app\src\test" />
+      <recent name="C:\Users\ishu\Downloads\Repos\sunflower\core\src\test" />
+      <recent name="C:\Users\ishu\Downloads\Repos\sunflower\app\src\main\java\com\google\samples\apps\sunflower" />
+      <recent name="C:\Users\ishu\Downloads\Repos\sunflower\core\src\main\java\com\example\core\wrappers" />
+      <recent name="C:\Users\ishu\Downloads\Repos\sunflower\core\src\main\java\com\example\core" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="sunflower.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GardenPlantingDaoTest" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="sunflower.app" />
+      <option name="TESTING_TYPE" value="2" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="com.google.samples.apps.sunflower.data.GardenPlantingDaoTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="INCLUDE_GRADLE_EXTRA_OPTIONS" value="true" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConvertersTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.google.samples.apps.sunflower.data.ConvertersTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:cleanTestDevDebugUnitTest" />
+            <option value=":app:testDevDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ReleasableTest [1]" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true" repeat_mode="N Times">
+      <module name="sunflower.app" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.google.samples.apps.sunflower.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.google.samples.apps.sunflower" />
+      <option name="MAIN_CLASS_NAME" value="com.google.samples.apps.sunflower.ReleasableTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReleasableTest [*]" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true" repeat_mode="Until Failure">
+      <module name="sunflower.app" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.google.samples.apps.sunflower.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.google.samples.apps.sunflower" />
+      <option name="MAIN_CLASS_NAME" value="com.google.samples.apps.sunflower.ReleasableTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReleasableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sunflower.app" />
+      <shortenClasspath name="MANIFEST" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.google.samples.apps.sunflower.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.google.samples.apps.sunflower" />
+      <option name="MAIN_CLASS_NAME" value="com.google.samples.apps.sunflower.ReleasableTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Android App.app" />
+      <item itemvalue="Android Instrumented Tests.GardenPlantingDaoTest" />
+      <item itemvalue="Gradle.ConvertersTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ConvertersTest" />
+        <item itemvalue="Android Instrumented Tests.GardenPlantingDaoTest" />
+        <item itemvalue="Gradle.ConvertersTest" />
+        <item itemvalue="Android Instrumented Tests.GardenPlantingDaoTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c2265a28-b05d-4fd7-91f6-bf0773569bc6" name="Default Changelist" comment="" />
+      <created>1608389331828</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608389331828</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="370" y="3" key="#&lt;template&gt;_of_JUnit" timestamp="1611353474158">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="370" y="3" key="#&lt;template&gt;_of_JUnit/0.0.1536.824@0.0.1536.824" timestamp="1611353474158" />
+    <state x="286" y="166" key="#PSD" timestamp="1609786314468">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="286" y="158" key="#PSD/0.0.1536.824@0.0.1536.824" timestamp="1608399886492" />
+    <state x="286" y="166" key="#PSD/0.0.1536.864@0.0.1536.864" timestamp="1609786314468" />
+    <state x="249" y="7" key="#Project_Structure" timestamp="1609667566873">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="249" y="7" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1609667566873" />
+    <state x="370" y="31" key="#ReleasableTest" timestamp="1611353538541">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="370" y="31" key="#ReleasableTest/0.0.1536.824@0.0.1536.824" timestamp="1611353538541" />
+    <state x="19" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611353562841">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="19" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1611353562841" />
+    <state x="560" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1611357482300">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="560" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1611357482300" />
+    <state x="560" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1609879746377" />
+    <state x="326" y="336" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1610052437400">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="326" y="336" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1610052437400" />
+    <state x="566" y="339" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1609714899290">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="566" y="339" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1536.864@0.0.1536.864" timestamp="1609714899290" />
+    <state x="460" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610114109942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="460" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1610114109942" />
+    <state x="460" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1609713525354" />
+    <state x="499" y="171" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1611357544431">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="171" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1611357544431" />
+    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1609935427397" />
+    <state x="465" y="213" width="670" height="465" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1610834087354">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="213" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1610834087354" />
+    <state x="465" y="223" width="670" height="465" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1609855053457" />
+    <state x="349" y="167" key="AndroidCreateResourceFileDialog" timestamp="1610105823810">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="167" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1610105823810" />
+    <state x="147" y="64" width="1228" height="687" key="DiffContextDialog" timestamp="1611414011856">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="64" width="1228" height="687" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1611414011856" />
+    <state x="147" y="67" width="1228" height="719" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1609928437807" />
+    <state x="525" y="148" key="FileChooserDialogImpl" timestamp="1610097914619">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="525" y="148" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610097914619" />
+    <state x="525" y="155" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1609671310728" />
+    <state x="392" y="242" key="GradleDaemons" timestamp="1608389480780">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="392" y="242" key="GradleDaemons/0.0.1536.824@0.0.1536.824" timestamp="1608389480780" />
+    <state width="1491" height="209" key="GridCell.Tab.0.bottom" timestamp="1611357583796">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611357583796" />
+    <state width="1491" height="387" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1609928236560" />
+    <state width="1491" height="209" key="GridCell.Tab.0.center" timestamp="1611357583795">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611357583795" />
+    <state width="1491" height="387" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1609928236560" />
+    <state width="1491" height="209" key="GridCell.Tab.0.left" timestamp="1611357583795">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611357583795" />
+    <state width="1491" height="387" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1609928236560" />
+    <state width="1491" height="209" key="GridCell.Tab.0.right" timestamp="1611357583796">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611357583796" />
+    <state width="1491" height="387" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1609928236560" />
+    <state x="400" y="173" key="MultipleFileMergeDialog" timestamp="1611413461588">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="400" y="173" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1611413461588" />
+    <state x="511" y="114" key="RollbackChangesDialog" timestamp="1611414014187">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="511" y="114" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1611414014187" />
+    <state x="511" y="120" key="RollbackChangesDialog/0.0.1536.864@0.0.1536.864" timestamp="1609928438413" />
+    <state x="277" y="57" width="1536" height="707" key="SettingsEditor" timestamp="1610059145450">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610059145450" />
+    <state x="0" y="150" width="1536" height="707" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1609671500972" />
+    <state x="530" y="166" key="VcsDiffUtil.ChangesDialog" timestamp="1611356630246">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="530" y="166" key="VcsDiffUtil.ChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1611356630246" />
+    <state x="373" y="174" key="VcsDiffUtil.ChangesDialog/0.0.1536.864@0.0.1536.864" timestamp="1609927913540" />
+    <state x="471" y="221" key="com.android.tools.idea.run.deployment.SelectMultipleDevicesDialog" timestamp="1608403463985">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="471" y="221" key="com.android.tools.idea.run.deployment.SelectMultipleDevicesDialog/0.0.1536.824@0.0.1536.824" timestamp="1608403463985" />
+    <state x="472" y="93" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1609878843941">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="472" y="93" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.864@0.0.1536.864" timestamp="1609878843941" />
+    <state x="478" y="145" width="754" height="592" key="find.popup" timestamp="1611414188206">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="145" width="754" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1611414188206" />
+    <state x="478" y="152" width="807" height="624" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1609878451157" />
+    <state x="492" y="203" key="refactoring.ChangeSignatureDialog" timestamp="1609707417647">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="492" y="203" key="refactoring.ChangeSignatureDialog/0.0.1536.864@0.0.1536.864" timestamp="1609707417647" />
+    <state x="425" y="188" key="run.anything.popup" timestamp="1610895936129">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="188" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1610895936129" />
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1609752381936" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1611414319510">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1611414319510" />
+    <state x="431" y="152" width="672" height="711" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1609934019365" />
+  </component>
+</project>
